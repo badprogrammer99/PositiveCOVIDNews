@@ -1,0 +1,26 @@
+{
+    "name": "jose/acaproject",
+    "description": "Project for the course unit Aplicações de Código Aberto (Open Source Applications)",
+    "type": "project",
+    "authors": [
+        {
+            "name": "José Simões",
+            "email": "jose.etpr99@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.0",
+        "google/cloud-language": "v0.24.4",
+        "guzzle/http": "v3.9.2",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "DataSources\\": "DataSources",
+            "Exceptions\\": "Exceptions",
+            "Models\\": "Models",
+            "Parsers\\": "Parsers",
+            "Storage\\": "Storage"
+        }
+    }
+}

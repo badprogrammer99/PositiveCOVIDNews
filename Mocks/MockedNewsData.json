@@ -1,0 +1,1456 @@
+{
+  "location": {
+    "long": null,
+    "countryOrRegion": null,
+    "provinceOrState": null,
+    "county": null,
+    "isoCode": null,
+    "lat": null
+  },
+  "updatedDateTime": "2020-12-31T11:35:44.4972178Z",
+  "news": [
+    {
+      "path": "_news/2020-12-31-tokyo-reports-1300-plus-coronavirus-cases-new-years-eve-us-bases-in-japan-and-south-korea-confirm-25.md",
+      "title": "Tokyo reports 1,300-plus coronavirus cases New Year’s Eve; US bases in Japan and South Korea confirm 25",
+      "excerpt": "The U.S. military in Japan and South Korea reported 25 new viral patients as of 6 p.m. Thursday, the majority of them at Marine Corps bases.",
+      "sourceUrl": null,
+      "webUrl": "https://www.stripes.com/news/pacific/tokyo-reports-1-300-plus-coronavirus-cases-new-year-s-eve-us-bases-in-japan-and-south-korea-confirm-25-1.656982",
+      "originalUrl": "https://www.stripes.com/news/pacific/tokyo-reports-1-300-plus-coronavirus-cases-new-year-s-eve-us-bases-in-japan-and-south-korea-confirm-25-1.656982",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 119,
+      "tags": [
+        "JP"
+      ],
+      "images": [
+        {
+          "url": "https://www.stripes.com/polopoly_fs/1.656983.1609407407!/image/image.jpg_gen/derivatives/landscape_490/image.jpg",
+          "width": 490,
+          "height": 326,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": null,
+      "cdnAmpWebUrl": null,
+      "publishedDateTime": "2020-12-31T02:56:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Stars and Stripes",
+        "domain": "stripes.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Japan",
+        "Coronavirus in Asia",
+        "Coronavirus",
+        "Coronavirus in South Korea"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-tokyo-trading-closed-for-holiday-other-asian-indexes-mixed.md",
+      "title": "Tokyo trading closed for holiday, other Asian indexes mixed",
+      "excerpt": "Tokyo Stock Exchange in Tokyo. Major Asian bourses were closed for the New Year's holidays Thursday, Dec. 31, while the handful that remained open was mixed. (JPX via AP) TOKYO – Major Asian bourses were closed for the New Year's holidays Thursday while the handful that remained open was mixed.",
+      "sourceUrl": null,
+      "webUrl": "https://www.clickorlando.com/business/2020/12/31/tokyo-trading-closed-for-holiday-other-asian-indexes-mixed/",
+      "originalUrl": "https://www.clickorlando.com/business/2020/12/31/tokyo-trading-closed-for-holiday-other-asian-indexes-mixed/",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 85,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://www.clickorlando.com/resizer/FiWpAQYBLWH_esXjBFhDNwwAKdc=/1280x720/smart/cloudfront-us-east-1.images.arcpublishing.com/gmg/GPJXOFPZXZDLZKMDE5BNYGW35E.jpg",
+          "width": 1280,
+          "height": 720,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.clickorlando.com/business/2020/12/31/tokyo-trading-closed-for-holiday-other-asian-indexes-mixed/?outputType=amp",
+      "cdnAmpWebUrl": "https://www-clickorlando-com.cdn.ampproject.org/c/s/www.clickorlando.com/business/2020/12/31/tokyo-trading-closed-for-holiday-other-asian-indexes-mixed/?outputType=amp",
+      "publishedDateTime": "2020-12-31T02:56:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Click Orlando",
+        "domain": "clickorlando.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Asia",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-global-stocks-close-out-a-blockbuster-2020-on-a-slightly-lower-footing-with-covid-19-and-an-end-to-brexit-in-focus.md",
+      "title": "Global stocks close out a blockbuster 2020 on a slightly lower footing, with COVID-19 and an end to Brexit in focus",
+      "excerpt": "World shares head for record close to volatile year, while US stimulus checks, Brexit deal and vaccines support investor risk appetite.",
+      "sourceUrl": null,
+      "webUrl": "https://www.businessinsider.com/stock-markets-record-2020-end-virus-brexit-2020-12",
+      "originalUrl": "https://www.businessinsider.com/stock-markets-record-2020-end-virus-brexit-2020-12",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 83,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://images2.markets.businessinsider.com/5feda1dfa18a450018cb65bf?format=jpeg",
+          "width": 789,
+          "height": 526,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.businessinsider.com/stock-markets-record-2020-end-virus-brexit-2020-12?amp",
+      "cdnAmpWebUrl": "https://www-businessinsider-com.cdn.ampproject.org/c/s/www.businessinsider.com/stock-markets-record-2020-end-virus-brexit-2020-12?amp",
+      "publishedDateTime": "2020-12-31T02:53:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Business Insider",
+        "domain": "businessinsider.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/businessinsider.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Asia",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-singapore-sees-uneven-recovery-in-2021-after-worst-ever-downturn.md",
+      "title": "Singapore Sees Uneven Recovery in 2021 After Worst-Ever Downturn",
+      "excerpt": "After suffering its worst economic downturn since independence, Singapore is expecting to see a rebound in 2021, Prime Minister Lee Hsien Loong said Thursday, echoing other top officials to caution that the recovery will be uneven.",
+      "sourceUrl": null,
+      "webUrl": "https://www.bloomberg.com/news/articles/2020-12-31/singapore-sees-uneven-recovery-in-2021-after-worst-ever-downturn",
+      "originalUrl": "https://www.bloomberg.com/news/articles/2020-12-31/singapore-sees-uneven-recovery-in-2021-after-worst-ever-downturn",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 90,
+      "tags": [
+        "Singapore",
+        "SG"
+      ],
+      "images": [
+        {
+          "url": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iTFnO_fTJyIo/v0/360x-1.jpg",
+          "width": 360,
+          "height": 240,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.bloomberg.com/amp/news/articles/2020-12-31/singapore-sees-uneven-recovery-in-2021-after-worst-ever-downturn",
+      "cdnAmpWebUrl": "https://www-bloomberg-com.cdn.ampproject.org/c/s/www.bloomberg.com/amp/news/articles/2020-12-31/singapore-sees-uneven-recovery-in-2021-after-worst-ever-downturn",
+      "publishedDateTime": "2020-12-31T02:49:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Bloomberg",
+        "domain": "bloomberg.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/bloomberg.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Asia",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-wisconsin-health-care-worker-intentionally-ruined-more-than-500-coronavirus-vaccine-doses-hospital-says.md",
+      "title": "Wisconsin health-care worker ‘intentionally’ ruined more than 500 coronavirus vaccine doses, hospital says",
+      "excerpt": "A worker at a Wisconsin hospital allegedly admitted to deliberately damaging more than 50 vials of the Moderna vaccine over the weekend, sparking an investigation by the FBI, FDA and local police.",
+      "sourceUrl": null,
+      "webUrl": "https://www.washingtonpost.com/nation/2020/12/31/covid-vaccines-destroyed-wisconsin-hospital/",
+      "originalUrl": "https://www.washingtonpost.com/nation/2020/12/31/covid-vaccines-destroyed-wisconsin-hospital/",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 157,
+      "tags": [
+        "US-WI"
+      ],
+      "images": [
+        {
+          "url": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/SQ5R3IF4UYI6VF6BNTYRN77CNQ.jpg&w=1440",
+          "width": 1440,
+          "height": 960,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.washingtonpost.com/nation/2020/12/31/covid-vaccines-destroyed-wisconsin-hospital/?outputType=amp",
+      "cdnAmpWebUrl": "https://www-washingtonpost-com.cdn.ampproject.org/c/s/www.washingtonpost.com/nation/2020/12/31/covid-vaccines-destroyed-wisconsin-hospital/?outputType=amp",
+      "publishedDateTime": "2020-12-31T02:49:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Washington Post",
+        "domain": "washingtonpost.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/washingtonpost.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in US",
+        "Coronavirus",
+        "Treatment"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-competitive-intelligence-tools-market-in-the-post-covid-19-paradigm-global-outlook-by-2021-2030.md",
+      "title": "Competitive Intelligence Tools Market in the post Covid-19 paradigm, Global Outlook by 2021-2030",
+      "excerpt": "Market.Biz :Impact of Covid-19 on the Competitive Intelligence Tools market:[Covid-19 is an unforeseen and unprecedented situation that has turned the whole world upside down. And like all major disruptions,",
+      "sourceUrl": null,
+      "webUrl": "https://apnews.com/press-release/wired-release/technology-business-corporate-news-products-and-services-new-products-and-services-ca4f5aa4733fcf56b323b3c15deb5321",
+      "originalUrl": "https://apnews.com/press-release/wired-release/technology-business-corporate-news-products-and-services-new-products-and-services-ca4f5aa4733fcf56b323b3c15deb5321",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 82,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://apnews.com/images/PaidContent3.png",
+          "width": 700,
+          "height": 450,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": null,
+      "cdnAmpWebUrl": null,
+      "publishedDateTime": "2020-12-31T02:45:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Associated Press",
+        "domain": "apnews.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/apnews.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Economic Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-threat-of-bad-weather-prompts-wetumpka-to-cancel-new-years-eve-celebration-events.md",
+      "title": "Threat of bad weather prompts Wetumpka to cancel New Year's Eve celebration events",
+      "excerpt": "Montgomery's Eastdale Mall will host a Noon Year's Eve concert and balloon drop with YunRo; No other major public events planned in River Region",
+      "sourceUrl": null,
+      "webUrl": "https://www.montgomeryadvertiser.com/story/entertainment/2020/12/29/wetumpka-welcoming-2021-fireworks-line-dancing-and-music-steel-cuzn/4031865001/",
+      "originalUrl": "https://www.montgomeryadvertiser.com/story/entertainment/2020/12/29/wetumpka-welcoming-2021-fireworks-line-dancing-and-music-steel-cuzn/4031865001/",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 119,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://www.gannett-cdn.com/presto/2020/12/29/PMOY/cb065bfc-3472-4703-afe7-08204b91d273-121364444_148154573696127_600154243454805725_o.jpg?auto=webp&crop=2999,1687,x0,y150&format=pjpg&width=1200",
+          "width": 1200,
+          "height": 675,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://amp.montgomeryadvertiser.com/amp/4031865001",
+      "cdnAmpWebUrl": "https://amp-montgomeryadvertiser-com.cdn.ampproject.org/c/s/amp.montgomeryadvertiser.com/amp/4031865001",
+      "publishedDateTime": "2020-12-31T02:41:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Montgomery Advertiser",
+        "domain": "montgomeryadvertiser.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Events Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-optimity-2020-covid-19-vaccine-survey-finds-that-59-of-canadians-are-concerned-about-side-effects-from-the-vaccine.md",
+      "title": "Optimity 2020 COVID-19 Vaccine Survey Finds That 59% of Canadians are Concerned About Side Effects from the Vaccine",
+      "excerpt": "Vaccine Survey was completed by 30,054 Optimity users across Canada to uncover insights on COVID-19 vaccine knowledge, views on COVID-19 vaccine manufacturer, as well as attitudes and behaviours around receiving the COVID-19 vaccination.",
+      "sourceUrl": null,
+      "webUrl": "https://apnews.com/press-release/business-wire/technology-business-public-health-north-america-pharmaceutical-manufacturing-383fa894f9ea4f288df87bf08aad9da9",
+      "originalUrl": "https://apnews.com/press-release/business-wire/technology-business-public-health-north-america-pharmaceutical-manufacturing-383fa894f9ea4f288df87bf08aad9da9",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 73,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://apnews.com/images/PaidContent3.png",
+          "width": 700,
+          "height": 450,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": null,
+      "cdnAmpWebUrl": null,
+      "publishedDateTime": "2020-12-31T02:35:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Associated Press",
+        "domain": "apnews.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/apnews.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Travel Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-impact-of-covid-19-on-drinking-water-market-research-report-2021-marketbiz.md",
+      "title": "Impact of COVID-19 on Drinking Water Market Research Report 2021-Market.biz",
+      "excerpt": "MarketDesk :Market.biz announces the release of the report Global Drinking Water Market 2021 Market Research Report by Type, by applications, Global Forecast to 2026 Cumulative Impact of COVID-19 with statistical data represented in tables,",
+      "sourceUrl": null,
+      "webUrl": "https://apnews.com/press-release/wired-release/technology-business-corporate-news-lung-disease-middle-east-0c9f2f75d2455858c904622218b34433",
+      "originalUrl": "https://apnews.com/press-release/wired-release/technology-business-corporate-news-lung-disease-middle-east-0c9f2f75d2455858c904622218b34433",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 188,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://apnews.com/images/PaidContent3.png",
+          "width": 700,
+          "height": 450,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": null,
+      "cdnAmpWebUrl": null,
+      "publishedDateTime": "2020-12-31T02:34:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Associated Press",
+        "domain": "apnews.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/apnews.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Asia",
+        "Coronavirus",
+        "Treatment"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-israel-expects-to-get-modernas-covid-19-vaccine-by-march-minister-says.md",
+      "title": "Israel expects to get Moderna's COVID-19 vaccine by March, minister says",
+      "excerpt": "Israel expects to begin receiving Moderna Inc.'s coronavirus vaccines by March \"at the latest\", Health Minister Yuli Edelstein told Ynet TV on Thursday. JERUSALEM, Dec 31 (Reuters) - Israel expects to begin receiving Moderna Inc.",
+      "sourceUrl": null,
+      "webUrl": "https://www.nasdaq.com/articles/israel-expects-to-get-modernas-covid-19-vaccine-by-march-minister-says-2020-12-31-0",
+      "originalUrl": "https://www.nasdaq.com/articles/israel-expects-to-get-modernas-covid-19-vaccine-by-march-minister-says-2020-12-31-0",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 94,
+      "tags": null,
+      "images": null,
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.nasdaq.com/articles/israel-expects-to-get-modernas-covid-19-vaccine-by-march-minister-says-2020-12-31-0?amp",
+      "cdnAmpWebUrl": "https://www-nasdaq-com.cdn.ampproject.org/c/s/www.nasdaq.com/articles/israel-expects-to-get-modernas-covid-19-vaccine-by-march-minister-says-2020-12-31-0?amp",
+      "publishedDateTime": "2020-12-31T02:31:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Nasdaq",
+        "domain": "nasdaq.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Treatment",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-dow-record-high-covid-19-deaths-new-years-eve-5-things-you-must-know-thursday.md",
+      "title": "Dow Record High, Covid-19 Deaths, New Year's Eve - 5 Things You Must Know Thursday",
+      "excerpt": "Stock futures fluctuate on Thursday, the last day of 2020; the U.S. records a record high for Covid-19 deaths; Exxon Mobil indicates it will record a fourth-straight quarterly loss.",
+      "sourceUrl": null,
+      "webUrl": "https://www.thestreet.com/markets/5-things-you-must-know-before-the-market-opens-thursday-123120",
+      "originalUrl": "https://www.thestreet.com/markets/5-things-you-must-know-before-the-market-opens-thursday-123120",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 84,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://www.thestreet.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_faces:center%2Cq_auto:good%2Cw_620/MTc3MjUzNjQ2MDUwNzk3MzA1/cramer-today-th-1203.jpg",
+          "width": 620,
+          "height": 349,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.thestreet.com/.amp/markets/5-things-you-must-know-before-the-market-opens-thursday-123120",
+      "cdnAmpWebUrl": "https://www-thestreet-com.cdn.ampproject.org/c/s/www.thestreet.com/.amp/markets/5-things-you-must-know-before-the-market-opens-thursday-123120",
+      "publishedDateTime": "2020-12-31T02:26:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "TheStreet.com",
+        "domain": "thestreet.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Stock Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-its-crazy-upbeat-covid-19-vaccine-news-from-china-and-uk-leaves-scientists-wanting-more-details.md",
+      "title": "‘It’s crazy.’ Upbeat COVID-19 vaccine news from China and U.K. leaves scientists wanting more details",
+      "excerpt": "It’s crazy.’ Upbeat COVID-19 vaccine news from China and U.K. leaves scientists wanting more details. Dec. 30, 2020 , 7:30 PM. Science ’ s COV",
+      "sourceUrl": null,
+      "webUrl": "https://www.sciencemag.org/news/2020/12/it-s-crazy-upbeat-covid-19-vaccine-news-china-and-uk-leave-scientists-wanting-more",
+      "originalUrl": "https://www.sciencemag.org/news/2020/12/it-s-crazy-upbeat-covid-19-vaccine-news-china-and-uk-leave-scientists-wanting-more",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 120,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://www.sciencemag.org/sites/default/files/styles/article_main_large/public/sinopharm_1280p_0.jpg?itok=COdv85AA",
+          "width": 1280,
+          "height": 720,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": null,
+      "cdnAmpWebUrl": null,
+      "publishedDateTime": "2020-12-31T02:23:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Science | AAAS",
+        "domain": "sciencemag.org",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus",
+        "Coronavirus in China",
+        "Coronavirus in Asia",
+        "Treatment"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-update-1-pakistan-to-purchase-12-million-covid-19-vaccine-doses-from-chinas-sinopharm.md",
+      "title": "UPDATE 1-Pakistan to purchase 1.2 million COVID-19 vaccine doses from China's Sinopharm",
+      "excerpt": "Pakistan will purchase 1.2 million COVID-19 vaccine doses from China's Sinopharm, a minister said on Thursday, the first official confirmation of a vaccine purchase by the South Asian country as it battles a second wave of infections.",
+      "sourceUrl": null,
+      "webUrl": "https://www.reuters.com/article/health-coronavirus-pakistan-vaccine-idUSL1N2JB077",
+      "originalUrl": "https://www.reuters.com/article/health-coronavirus-pakistan-vaccine-idUSL1N2JB077",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 137,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://s3.reutersmedia.net/resources/r/?m=02&d=20201231&t=2&i=1546234986&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPEGBU06Q",
+          "width": 817,
+          "height": 545,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://mobile.reuters.com/article/amp/idUSKBN2950DU",
+      "cdnAmpWebUrl": "https://mobile-reuters-com.cdn.ampproject.org/c/s/mobile.reuters.com/article/amp/idUSKBN2950DU",
+      "publishedDateTime": "2020-12-31T02:18:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Reuters",
+        "domain": "reuters.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/reuters.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Asia",
+        "Coronavirus",
+        "Coronavirus in China"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-the-other-half-of-my-soul-widows-of-covid-19-bond-over-sudden-loss.md",
+      "title": "‘The Other Half of My Soul’: Widows of Covid-19 Bond Over Sudden Loss",
+      "excerpt": "Men have died of the coronavirus in larger numbers than women, leaving untold thousands of spouses suddenly alone. Some have turned to bereavement groups on Facebook.",
+      "sourceUrl": null,
+      "webUrl": "https://www.nytimes.com/2020/12/31/us/covid-widows-deaths.html",
+      "originalUrl": "https://www.nytimes.com/2020/12/31/us/covid-widows-deaths.html",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 95,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://static01.nyt.com/images/2020/12/24/us/xxvirus-widows-pamela-new/xxvirus-widows-pamela-new-facebookJumbo.jpg",
+          "width": 1050,
+          "height": 550,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.nytimes.com/2020/12/31/us/covid-widows-deaths.amp.html",
+      "cdnAmpWebUrl": "https://www-nytimes-com.cdn.ampproject.org/c/s/www.nytimes.com/2020/12/31/us/covid-widows-deaths.amp.html",
+      "publishedDateTime": "2020-12-31T02:09:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "New York Times",
+        "domain": "nytimes.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/nytimes.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-covid-19-live-updates-china-approves-its-first-vaccine.md",
+      "title": "Covid-19 Live Updates: China Approves Its First Vaccine",
+      "excerpt": "The country is now set to inoculate tens of millions. A tiny Colorado town is grappling with the first detected U.S. cases of the new virus variant. Good riddance, 2020! Here’s the latest pandemic news.",
+      "sourceUrl": null,
+      "webUrl": "https://www.nytimes.com/live/2020/12/31/world/coronavirus-updates",
+      "originalUrl": "https://www.nytimes.com/live/2020/12/31/world/coronavirus-updates",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 225,
+      "tags": [
+        "CN"
+      ],
+      "images": [
+        {
+          "url": "https://static01.nyt.com/images/2020/12/31/world/31virus-briefing-china-vaccine/31virus-briefing-china-vaccine-facebookJumbo.jpg",
+          "width": 1050,
+          "height": 549,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.nytimes.com/live/2020/12/31/world/coronavirus-updates.amp.html",
+      "cdnAmpWebUrl": "https://www-nytimes-com.cdn.ampproject.org/c/s/www.nytimes.com/live/2020/12/31/world/coronavirus-updates.amp.html",
+      "publishedDateTime": "2020-12-31T02:04:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "New York Times",
+        "domain": "nytimes.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/nytimes.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in China",
+        "Coronavirus in Asia",
+        "Coronavirus",
+        "Treatment"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-one-escapee-from-covid-19-treatment-facility-arrested.md",
+      "title": "ONE ESCAPEE FROM COVID-19 TREATMENT FACILITY ARRESTED",
+      "excerpt": "Colombo (News 1st); One of the five COVID-19 patients who fled from the Gallella COVID-19 treatment facility was arrested by the Madapme Police and health - Get the latest breaking news and top stories from Sri Lanka,",
+      "sourceUrl": null,
+      "webUrl": "https://www.newsfirst.lk/2020/12/31/one-escapee-from-covid-19-treatment-facility-arrested/",
+      "originalUrl": "https://www.newsfirst.lk/2020/12/31/one-escapee-from-covid-19-treatment-facility-arrested/",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 90,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://cdn.newsfirst.lk/english-uploads/2020/12/664048d6-542868_550x300_crop.jpg",
+          "width": 550,
+          "height": 300,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.newsfirst.lk/2020/12/31/one-escapee-from-covid-19-treatment-facility-arrested/amp/",
+      "cdnAmpWebUrl": "https://www-newsfirst-lk.cdn.ampproject.org/c/s/www.newsfirst.lk/2020/12/31/one-escapee-from-covid-19-treatment-facility-arrested/amp/",
+      "publishedDateTime": "2020-12-31T02:04:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "News",
+        "domain": "newsfirst.lk",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Treatment",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-debate-over-2000-coronavirus-aid-checks-could-spur-both-democratic-and-gop-turnout-in-georgia-senate-races.md",
+      "title": "Debate over $2,000 coronavirus aid checks could spur both Democratic and GOP turnout in Georgia Senate races",
+      "excerpt": "The debate surrounding a coronavirus aid check increase to $2,000 has come to the forefront of the runoff elections, which take place Tuesday.",
+      "sourceUrl": null,
+      "webUrl": "https://www.usatoday.com/story/news/politics/elections/2020/12/31/georgia-senate-race-loeffler-perdue-ossoff-warnock-push-covid-aid/4085117001/",
+      "originalUrl": "https://www.usatoday.com/story/news/politics/elections/2020/12/31/georgia-senate-race-loeffler-perdue-ossoff-warnock-push-covid-aid/4085117001/",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 96,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://www.gannett-cdn.com/presto/2020/12/02/USAT/ae586a1e-a809-4c8d-b793-03fde46384bf-splitpic.jpg?auto=webp&crop=3983,2240,x8,y0&format=pjpg&width=1200",
+          "width": 1200,
+          "height": 675,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://amp.usatoday.com/amp/4085117001",
+      "cdnAmpWebUrl": "https://amp-usatoday-com.cdn.ampproject.org/c/s/amp.usatoday.com/amp/4085117001",
+      "publishedDateTime": "2020-12-31T02:03:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "USA Today",
+        "domain": "usatoday.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/usatoday.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Political Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-teachers-should-be-next-in-covid-19-vaccine-schedule-cdc-says-can-a-shot-reopen-schools.md",
+      "title": "Teachers should be next in COVID-19 vaccine schedule, CDC says. Can a shot reopen schools?",
+      "excerpt": "The CDC recommended teachers be next in line on the schedule for a COVID-19 vaccine. Will the slow rollout get in the way of reopening schools?",
+      "sourceUrl": null,
+      "webUrl": "https://www.usatoday.com/story/news/education/2020/12/31/covid-vaccine-schedule-should-teachers-get-shot-reopen-schools/4075831001/",
+      "originalUrl": "https://www.usatoday.com/story/news/education/2020/12/31/covid-vaccine-schedule-should-teachers-get-shot-reopen-schools/4075831001/",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 95,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://www.gannett-cdn.com/media/2020/12/20/TheDailyArdmoreite/gda-covid-19-state-2020-12-20-ok-nard.jpg?auto=webp&crop=3600,2025,x0,y188&format=pjpg&width=1200",
+          "width": 1200,
+          "height": 675,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://amp.usatoday.com/amp/4075831001",
+      "cdnAmpWebUrl": "https://amp-usatoday-com.cdn.ampproject.org/c/s/amp.usatoday.com/amp/4075831001",
+      "publishedDateTime": "2020-12-31T02:03:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "USA Today",
+        "domain": "usatoday.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/usatoday.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Treatment",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-last-little-hurrah-thwarts-tribes-effort-to-keep-covid-19-off-reservation.md",
+      "title": "'Last Little Hurrah' Thwarts Tribe's Effort To Keep COVID-19 Off Reservation",
+      "excerpt": "Colville Reservation's council has been doing its best to insulate the north central Washington tribe from the coronavirus. But borders are fluid, so the community's precautions haven't been enough.",
+      "sourceUrl": null,
+      "webUrl": "https://www.npr.org/2020/12/31/949833192/last-little-hurrah-thwarts-tribes-effort-to-keep-covid-19-off-reservation",
+      "originalUrl": "https://www.npr.org/2020/12/31/949833192/last-little-hurrah-thwarts-tribes-effort-to-keep-covid-19-off-reservation",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 72,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://media.npr.org/assets/img/2020/12/23/colville4_wide-a4fd91c685047c76be2f9f13e973e2e747150d6b.jpg?s=1400",
+          "width": 1400,
+          "height": 787,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": null,
+      "cdnAmpWebUrl": null,
+      "publishedDateTime": "2020-12-31T02:00:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "NPR",
+        "domain": "npr.org",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/npr.org-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-sc-cities-cancel-new-years-eve-events-ask-public-to-stay-home-but-not-myrtle-beach.md",
+      "title": "SC cities cancel New Year’s Eve events, ask public to stay home — but not Myrtle Beach",
+      "excerpt": "While other parts of the state beg residents to stay home, Myrtle Beach is letting several major parties go on as coronavirus cases spike around the South Carolina.",
+      "sourceUrl": null,
+      "webUrl": "https://www.thestate.com/news/coronavirus/article248176680.html",
+      "originalUrl": "https://www.thestate.com/news/coronavirus/article248176680.html",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 117,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://cf-images.us-east-1.prod.boltdns.net/v1/static/5502557042001/0544bf16-16bd-418a-874e-658503e9a3d0/fcb724c0-a3e7-4a0d-9a97-5434fc8b8885/1280x720/match/image.jpg",
+          "width": 1280,
+          "height": 720,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://amp.thestate.com/news/coronavirus/article248176680.html",
+      "cdnAmpWebUrl": "https://amp-thestate-com.cdn.ampproject.org/c/s/amp.thestate.com/news/coronavirus/article248176680.html",
+      "publishedDateTime": "2020-12-31T02:00:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "The State",
+        "domain": "thestate.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Events Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-lobster-and-foie-gras-but-no-crowds-this-new-year-in-france.md",
+      "title": "Lobster and foie gras, but no crowds this New Year in France",
+      "excerpt": "When the clocks strike midnight on New Year's Eve, France will be under curfew and its citizens plan to celebrate with gourmet food rather than large groups of friends.",
+      "sourceUrl": null,
+      "webUrl": "https://www.reuters.com/article/us-newyear-france-food-idUKKBN2950S9",
+      "originalUrl": "https://www.reuters.com/article/us-newyear-france-food-idUKKBN2950S9",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 90,
+      "tags": [
+        "France",
+        "FR"
+      ],
+      "images": [
+        {
+          "url": "https://s2.reutersmedia.net/resources/r/?m=02&d=20201231&t=2&i=1546252061&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPEGBU0DI",
+          "width": 818,
+          "height": 545,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://mobile.reuters.com/article/amp/idUKKBN2950S9",
+      "cdnAmpWebUrl": "https://mobile-reuters-com.cdn.ampproject.org/c/s/mobile.reuters.com/article/amp/idUKKBN2950S9",
+      "publishedDateTime": "2020-12-31T01:48:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Reuters",
+        "domain": "reuters.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/reuters.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Europe",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-trump-versus-the-truth-the-most-outrageous-falsehoods-of-his-presidency.md",
+      "title": "Trump versus the truth: The most outrageous falsehoods of his presidency",
+      "excerpt": "I have never seen a president in American history who has lied so continuously and so outrageously as Donald Trump, period,” presidential historian Michael Beschloss said.",
+      "sourceUrl": null,
+      "webUrl": "https://www.nbcnews.com/politics/donald-trump/trump-versus-truth-most-outrageous-falsehoods-his-presidency-n1252580",
+      "originalUrl": "https://www.nbcnews.com/politics/donald-trump/trump-versus-truth-most-outrageous-falsehoods-his-presidency-n1252580",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 89,
+      "tags": [
+        "US"
+      ],
+      "images": [
+        {
+          "url": "https://media1.s-nbcnews.com/i/newscms/2020_52/3437553/201222-trump-biggest-whoppers-main-cover-cs_03ea1ca899b5c3c15b942562ca290873.jpg",
+          "width": 2500,
+          "height": 1408,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.nbcnews.com/news/amp/ncna1252580",
+      "cdnAmpWebUrl": "https://www-nbcnews-com.cdn.ampproject.org/c/s/www.nbcnews.com/news/amp/ncna1252580",
+      "publishedDateTime": "2020-12-31T01:37:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "NBC News",
+        "domain": "nbcnews.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in US",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-how-trump-warped-hhs-long-before-covid-19.md",
+      "title": "How Trump warped HHS long before Covid-19",
+      "excerpt": "President Donald Trump arrives in the press briefing room with members of the White House Coronavirus Task Force on April 4, 2020 in Washington, DC. | Sarah Silbiger/ They called it the \"End of Science and Medicine\" party — a hastily organized,",
+      "sourceUrl": null,
+      "webUrl": "https://www.politico.com/news/2020/12/31/how-trump-warped-hhs-452964",
+      "originalUrl": "https://www.politico.com/news/2020/12/31/how-trump-warped-hhs-452964",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 105,
+      "tags": [
+        "US"
+      ],
+      "images": [
+        {
+          "url": "https://static.politico.com/42/4c/8b9f84b04a42af0fe89bc2879207/1230trump2-1.jpg",
+          "width": 1160,
+          "height": 773,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.politico.com/amp/news/2020/12/31/how-trump-warped-hhs-452964",
+      "cdnAmpWebUrl": "https://www-politico-com.cdn.ampproject.org/c/s/www.politico.com/amp/news/2020/12/31/how-trump-warped-hhs-452964",
+      "publishedDateTime": "2020-12-31T01:36:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Politico",
+        "domain": "politico.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in US",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-doctors-nurses-cant-take-much-more-amid-covid-19-surge-in-southern-california.md",
+      "title": "Doctors, nurses 'can't take much more' amid Covid-19 surge in Southern California",
+      "excerpt": "Hospitals have erected makeshift ICUs and moved patients into gift shops and pediatric wards to make room for the sick and dying.",
+      "sourceUrl": null,
+      "webUrl": "https://www.nbcnews.com/news/us-news/doctors-nurses-can-t-take-much-more-amid-covid-19-n1252582",
+      "originalUrl": "https://www.nbcnews.com/news/us-news/doctors-nurses-can-t-take-much-more-amid-covid-19-n1252582",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 90,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://media4.s-nbcnews.com/i/newscms/2020_53/3438809/201230-california-anita-sircar-ppe-cover-main-ac-537p_9012306c58eadbd1580cc48fe1e72086.jpg",
+          "width": 2500,
+          "height": 1667,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.nbcnews.com/news/amp/ncna1252582",
+      "cdnAmpWebUrl": "https://www-nbcnews-com.cdn.ampproject.org/c/s/www.nbcnews.com/news/amp/ncna1252582",
+      "publishedDateTime": "2020-12-31T01:33:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "NBC News",
+        "domain": "nbcnews.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-verify-answering-your-questions-about-covid-19-vaccine-availability-in-oregon.md",
+      "title": "VERIFY: Answering your questions about COVID-19 vaccine availability in Oregon",
+      "excerpt": "KGW's VERIFY team set out to answer your questions about Oregon's plans to roll out the COVID-19 vaccines. Tens of thousands of doses of Pfizer and Moderna's COVID-19 vaccines have already arrived in Oregon,",
+      "sourceUrl": null,
+      "webUrl": "https://www.kgw.com/article/news/health/coronavirus/vaccine/verify-answering-your-questions-about-covid-19-vaccine-availability-in-oregon/283-2f39ec89-ae32-4060-86ab-b1b937a3fde4",
+      "originalUrl": "https://www.kgw.com/article/news/health/coronavirus/vaccine/verify-answering-your-questions-about-covid-19-vaccine-availability-in-oregon/283-2f39ec89-ae32-4060-86ab-b1b937a3fde4",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 71,
+      "tags": [
+        "US-OR"
+      ],
+      "images": [
+        {
+          "url": "https://media.kgw.com/assets/KGW/images/89ffd694-51ee-4d87-a153-f686b3cb4e1a/89ffd694-51ee-4d87-a153-f686b3cb4e1a_1140x641.jpg",
+          "width": 1140,
+          "height": 641,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.kgw.com/amp/article/news/health/coronavirus/vaccine/verify-answering-your-questions-about-covid-19-vaccine-availability-in-oregon/283-2f39ec89-ae32-4060-86ab-b1b937a3fde4",
+      "cdnAmpWebUrl": "https://www-kgw-com.cdn.ampproject.org/c/s/www.kgw.com/amp/article/news/health/coronavirus/vaccine/verify-answering-your-questions-about-covid-19-vaccine-availability-in-oregon/283-2f39ec89-ae32-4060-86ab-b1b937a3fde4",
+      "publishedDateTime": "2020-12-31T01:30:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "KGW8",
+        "domain": "kgw.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in US",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-saudi-shares-set-to-finish-2020-higher-other-gulf-markets-subdued.md",
+      "title": "Saudi shares set to finish 2020 higher, other Gulf markets subdued",
+      "excerpt": "Saudi Arabian Shares fell in early trade on the last day of the 2020, but were set to close the session with a yearly gain, overcoming the first-quarter shock triggered by a global recession fears on COVID-19 and the Saudi-Russia oil price war.",
+      "sourceUrl": null,
+      "webUrl": "https://www.reuters.com/article/mideast-stocks-int-idUSKBN2950PZ",
+      "originalUrl": "https://www.reuters.com/article/mideast-stocks-int-idUSKBN2950PZ",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 90,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://s1.reutersmedia.net/resources/r/?m=02&d=20201231&t=2&i=1546248532&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPEGBU0C1",
+          "width": 818,
+          "height": 545,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://mobile.reuters.com/article/amp/idUSKBN2950PZ",
+      "cdnAmpWebUrl": "https://mobile-reuters-com.cdn.ampproject.org/c/s/mobile.reuters.com/article/amp/idUSKBN2950PZ",
+      "publishedDateTime": "2020-12-31T01:24:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Reuters",
+        "domain": "reuters.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/reuters.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Stock Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-covid-19-short-school-closures-and-covid-gongs.md",
+      "title": "Covid-19: 'Short' school closures and Covid gongs",
+      "excerpt": "On Wednesday, Mr Williamson announced that around one million pupils in at-risk areas would not return to school as planned on Monday - when term is due to start. People should avoid New Year's Eve celebrations because \"Covid loves a crowd\",",
+      "sourceUrl": null,
+      "webUrl": "https://www.bbc.com/news/amp/uk-55495032",
+      "originalUrl": "https://www.bbc.com/news/amp/uk-55495032",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 170,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://ichef.bbci.co.uk/news/1024/cpsprodpb/CC94/production/_111527325_index_daily_update_version02_cv_976new.png",
+          "width": 1024,
+          "height": 576,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.bbc.com/news/amp/uk-55495032",
+      "cdnAmpWebUrl": "https://www-bbc-com.cdn.ampproject.org/c/s/www.bbc.com/news/amp/uk-55495032",
+      "publishedDateTime": "2020-12-31T01:04:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "BBC",
+        "domain": "bbc.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/bbc.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Education Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-indias-ruling-party-pushes-budget-relief-for-middle-class-business-in-wake-of-virus.md",
+      "title": "India's ruling party pushes budget relief for middle class, business in wake of virus",
+      "excerpt": "India's ruling party has urged the government to put more money in the pockets of middle-income families in the next budget and cut the costs of raw material for small and medium-sized businesses, a party spokesman said on Thursday.",
+      "sourceUrl": null,
+      "webUrl": "https://www.reuters.com/article/india-economy-idUSL4N2JB0NO",
+      "originalUrl": "https://www.reuters.com/article/india-economy-idUSL4N2JB0NO",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 83,
+      "tags": [
+        "India",
+        "IN"
+      ],
+      "images": [
+        {
+          "url": "https://s2.reutersmedia.net/resources/r/?m=02&d=20201231&t=2&i=1546249083&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPEGBU0CC",
+          "width": 817,
+          "height": 545,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://mobile.reuters.com/article/amp/idUSKBN2950QA",
+      "cdnAmpWebUrl": "https://mobile-reuters-com.cdn.ampproject.org/c/s/mobile.reuters.com/article/amp/idUSKBN2950QA",
+      "publishedDateTime": "2020-12-31T01:04:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Reuters",
+        "domain": "reuters.com",
+        "images": [
+          {
+            "url": "https://insideout.github.io/coronavirus/assets/images/organizations/reuters.com-50x50.jpg",
+            "width": 50,
+            "height": 50,
+            "title": null,
+            "attribution": null,
+            "isCached": false
+          }
+        ],
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Asia",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-is-the-stock-market-closed-today-here-are-the-hours-for-new-years-eve-and-day.md",
+      "title": "Is the Stock Market Closed Today? Here Are the Hours for New Year’s Eve and Day.",
+      "excerpt": "It was a year to remember, for all the wrong reasons. Investors get a day off on New Year’s, but not on Thursday.",
+      "sourceUrl": null,
+      "webUrl": "https://www.barrons.com/articles/is-the-stock-market-closed-today-here-are-the-hours-for-new-years-eve-and-day-51609405201",
+      "originalUrl": "https://www.barrons.com/articles/is-the-stock-market-closed-today-here-are-the-hours-for-new-years-eve-and-day-51609405201",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 70,
+      "tags": null,
+      "images": [
+        {
+          "url": "https://images.barrons.com/im-279340/social",
+          "width": 1280,
+          "height": 640,
+          "title": null,
+          "attribution": null,
+          "isCached": true
+        }
+      ],
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://www.barrons.com/amp/articles/is-the-stock-market-closed-today-here-are-the-hours-for-new-years-eve-and-day-51609405201",
+      "cdnAmpWebUrl": "https://www-barrons-com.cdn.ampproject.org/c/s/www.barrons.com/amp/articles/is-the-stock-market-closed-today-here-are-the-hours-for-new-years-eve-and-day-51609405201",
+      "publishedDateTime": "2020-12-31T01:02:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Barron's",
+        "domain": "barrons.com",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Stock Impact",
+        "Coronavirus"
+      ]
+    },
+    {
+      "path": "_news/2020-12-31-2020-round-up-covid-19-in-south-asia.md",
+      "title": "2020 round-up: COVID-19 in South Asia",
+      "excerpt": "The COVID-19 pandemic swamped our coverage in the past 12 months as we highlighted the challenges people faced and the fight against the coronavirus across the region.",
+      "sourceUrl": null,
+      "webUrl": "https://globalvoices.org/2020/12/31/2020-round-up-covid-19-in-south-asia/",
+      "originalUrl": "https://globalvoices.org/2020/12/31/2020-round-up-covid-19-in-south-asia/",
+      "featuredContent": null,
+      "highlight": null,
+      "heat": 70,
+      "tags": null,
+      "images": null,
+      "content": "\r\n",
+      "type": "article",
+      "ampWebUrl": "https://globalvoices.org/2020/12/31/2020-round-up-covid-19-in-south-asia/amp/",
+      "cdnAmpWebUrl": "https://globalvoices-org.cdn.ampproject.org/c/s/globalvoices.org/2020/12/31/2020-round-up-covid-19-in-south-asia/amp/",
+      "publishedDateTime": "2020-12-31T00:54:00-08:00",
+      "updatedDateTime": null,
+      "provider": {
+        "name": "Global Voices Online",
+        "domain": "globalvoices.org",
+        "images": null,
+        "publishers": null,
+        "authors": null
+      },
+      "locale": "en-us",
+      "categories": [
+        "news"
+      ],
+      "topics": [
+        "Coronavirus in Asia",
+        "Coronavirus"
+      ]
+    }
+  ]
+}

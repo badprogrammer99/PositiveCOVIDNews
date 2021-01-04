@@ -16,7 +16,7 @@ class RapidAPINewsParser implements NewsParser
     /**
      * Parses news data from the RapidAPI news datasource.
      * @param $newsData
-     * @return array An array of parsed news articles.
+     * @return NewsArticle[] An array of parsed news articles.
      * @throws Exception
      */
     public function parseNewsData($newsData): array

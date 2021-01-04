@@ -10,14 +10,18 @@
     ],
     "require": {
         "php": ">=8.0.0",
-        "google/cloud-language": "v0.24.4",
-        "guzzle/http": "v3.9.2",
+        "google/cloud-language": "*",
+        "guzzle/http": "*",
+        "myclabs/php-enum": "*",
+        "rakibtg/sleekdb": "*",
         "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
             "DataSources\\": "DataSources",
             "Exceptions\\": "Exceptions",
+            "Language\\": "Language",
+            "Main\\": "Main",
             "Models\\": "Models",
             "Parsers\\": "Parsers",
             "Storage\\": "Storage"

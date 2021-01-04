@@ -2,7 +2,8 @@
 
 namespace DataSources\Abstracts;
 
-use GuzzleHttp\Client;
+use DataSources\Clients\Interfaces\NewsDataSourceClient;
+use Models\NewsArticle;
 use Parsers\Interfaces\NewsParser;
 
 /**
@@ -13,20 +14,9 @@ use Parsers\Interfaces\NewsParser;
 abstract class NewsDataSource
 {
     /**
-     * @var string The query to be used when searching the data source.
+     * @var NewsDataSourceClient The news datasource client to be used when making requests.
      */
-    private string $query;
-
-    /**
-     * @var Client The HTTP client to be used when making external requests.
-     * TODO change this client type so it's not stuck to the Guzzle implementation
-     */
-    private Client $client;
-
-    /**
-     * @var string The request method (GET, POST, etc) to be used when making external requests.
-     */
-    private string $requestMethod;
+    private NewsDataSourceClient $newsDataSourceClient;
 
     /**
      * @var NewsParser The news parser to be used when parsing the consumed resources from the datasource.
@@ -35,66 +25,29 @@ abstract class NewsDataSource
 
     /**
      * NewsDataSource constructor.
-     * @param string $baseUrl The base URL of the resource to be consumed (DON'T include a site's endpoint when passing this
-     * base URL string to the constructor!)
-     * @param string $requestMethod The request method.
+     * @param NewsDataSourceClient $newsDataSourceClient The news datasource client
      * @param NewsParser $newsParser The news parser
      */
-    public function __construct(string $baseUrl, string $requestMethod, NewsParser $newsParser)
+    public function __construct(NewsDataSourceClient $newsDataSourceClient, NewsParser $newsParser)
     {
-        $this->client = new Client(["base_uri" => $baseUrl]);
-        $this->requestMethod = $requestMethod;
+        $this->newsDataSourceClient = $newsDataSourceClient;
         $this->newsParser = $newsParser;
     }
 
     /**
-     * @return string The query to be used in future searches to the datasource (if any)
+     * @return NewsDataSourceClient
      */
-    public function getQuery(): string
+    public function getNewsDataSourceClient(): NewsDataSourceClient
     {
-        return $this->query;
+        return $this->newsDataSourceClient;
     }
 
     /**
-     * Sets the query to be used.
-     * @param string $query
+     * @param NewsDataSourceClient $newsDataSourceClient
      */
-    public function setQuery(string $query): void
+    public function setNewsDataSourceClient(NewsDataSourceClient $newsDataSourceClient): void
     {
-        $this->query = $query;
-    }
-
-    /**
-     * @return Client The HTTP client to be used when making external requests.
-     */
-    public function getClient(): Client
-    {
-        return $this->client;
-    }
-
-    /**
-     * Sets the HTTP client to be used.
-     * @param Client $client
-     */
-    public function setClient(Client $client): void
-    {
-        $this->client = $client;
-    }
-
-    /**
-     * @return string The request method (GET, POST, etc) to be used when making external requests.
-     */
-    public function getRequestMethod(): string
-    {
-        return $this->requestMethod;
-    }
-
-    /**
-     * @param string $requestMethod The request method.
-     */
-    public function setRequestMethod(string $requestMethod): void
-    {
-        $this->requestMethod = $requestMethod;
+        $this->newsDataSourceClient = $newsDataSourceClient;
     }
 
     /**
@@ -114,7 +67,7 @@ abstract class NewsDataSource
     }
 
     /**
-     * @return array The array of retrieved news articles.
+     * @return NewsArticle[] The array of retrieved news articles.
      */
     public abstract function retrieveNewsData(): array;
 }

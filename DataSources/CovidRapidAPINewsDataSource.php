@@ -3,7 +3,7 @@
 namespace DataSources;
 
 use DataSources\Abstracts\NewsDataSource;
-use GuzzleHttp\Exception\GuzzleException;
+use DataSources\Clients\HttpNewsDataSourceClient;
 use Parsers\RapidAPINewsParser;
 
 /**
@@ -28,6 +28,11 @@ class CovidRapidAPINewsDataSource extends NewsDataSource
     private string $apiKey;
 
     /**
+     * @var array The request options to be used when making the request to the external server.
+     */
+    private array $requestOptions;
+
+    /**
      * CovidRapidAPINewsDataSource constructor.
      */
     public function __construct()
@@ -35,25 +40,22 @@ class CovidRapidAPINewsDataSource extends NewsDataSource
         $this->baseUrl = "coronavirus-smartable.p.rapidapi.com";
         $this->endpoint = "/news/v1/global/";
         $this->apiKey = "92b3365ee6mshacd8468fe457effp1104c5jsn5330d8bd5390";
-        parent::__construct($this->baseUrl, "GET", new RapidAPINewsParser());
+        $this->requestOptions["REQUEST_METHOD"] = "GET";
+        $this->requestOptions["ADDITIONAL_OPTIONS"] = [
+            "headers" => [
+                "x-rapidapi-key" => $this->apiKey,
+                "x-rapidapi-host" => $this->baseUrl
+            ]
+        ];
+        parent::__construct(new HttpNewsDataSourceClient("https://" . $this->baseUrl), new RapidAPINewsParser());
     }
 
     /**
      * {@inheritDoc}
-     * @throws GuzzleException
      */
     public function retrieveNewsData(): array
     {
-        $response = $this->getClient()->request(
-            $this->getRequestMethod(),
-            $this->baseUrl . $this->endpoint,
-            [
-                "headers" => [
-                    "x-rapidapi-key" => $this->apiKey,
-                    "x-rapidapi-host" => $this->baseUrl
-                ]
-            ])
-        ->getBody();
+        $response = $this->getNewsDataSourceClient()->doRequest($this->endpoint, $this->requestOptions);
         return $this->getNewsParser()->parseNewsData($response);
     }
 }

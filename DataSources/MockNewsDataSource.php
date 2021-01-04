@@ -3,6 +3,7 @@
 namespace DataSources;
 
 use DataSources\Abstracts\NewsDataSource;
+use DataSources\Clients\LocalNewsDataSourceClient;
 use Parsers\RapidAPINewsParser;
 
 /**
@@ -21,7 +22,7 @@ class MockNewsDataSource extends NewsDataSource
      */
     public function __construct()
     {
-        parent::__construct("", "", new RapidAPINewsParser());
+        parent::__construct(new LocalNewsDataSourceClient(), new RapidAPINewsParser());
     }
 
     /**
@@ -29,7 +30,7 @@ class MockNewsDataSource extends NewsDataSource
      */
     public function retrieveNewsData(): array
     {
-        $mockedNewsContent = file_get_contents($this->mockDataLocation);
+        $mockedNewsContent = $this->getNewsDataSourceClient()->doRequest($this->mockDataLocation);
         return $this->getNewsParser()->parseNewsData($mockedNewsContent);
     }
 }

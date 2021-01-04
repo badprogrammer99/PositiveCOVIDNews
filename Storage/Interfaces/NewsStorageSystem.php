@@ -3,6 +3,7 @@
 namespace Storage\Interfaces;
 
 use DateTime;
+use Exception;
 use Models\NewsArticle;
 
 /**
@@ -13,7 +14,7 @@ use Models\NewsArticle;
 interface NewsStorageSystem
 {
     /**
-     * @return array All news currently stored in the storage system.
+     * @return NewsArticle[] All news currently stored in the storage system.
      */
     public function getAll(): array;
 
@@ -45,8 +46,7 @@ interface NewsStorageSystem
     /**
      * Deletes a news article from the database.
      * @param int $id The id of the news article to be deleted.
-     * @return bool True if the news article was deleted, false if not.
-     * TODO: Maybe throw an exception here instead of returning a boolean?
+     * @throws Exception If the article couldn't be deleted.
      */
-    public function delete(int $id): bool;
+    public function delete(int $id): void;
 }

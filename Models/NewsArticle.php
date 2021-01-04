@@ -3,12 +3,14 @@
 namespace Models;
 
 use DateTime;
+use Exception;
+use JsonSerializable;
 
 /**
  * Class NewsArticle Represents a news article.
  * @package Models
  */
-class NewsArticle
+class NewsArticle implements JsonSerializable
 {
     /**
      * @var string Title of the news article.
@@ -34,6 +36,21 @@ class NewsArticle
      * @var string Content of the news article.
      */
     private string $content;
+
+    /**
+     * NewsArticle constructor.
+     * @param array $properties
+     * @throws Exception
+     */
+    public function __construct(array $properties = array()) {
+        foreach ($properties as $key => $value) {
+            if ($key == "publishedAt") {
+                $this->{$key} = new DateTime($value["date"]);
+            } else {
+                $this->{$key} = $value;
+            }
+        }
+    }
 
     /**
      * @return string
@@ -113,5 +130,14 @@ class NewsArticle
     public function setContent(string $content): void
     {
         $this->content = $content;
+    }
+
+    /**
+     * Method called by the json_encode() function when serializing this object.
+     * @return object
+     */
+    public function jsonSerialize()
+    {
+        return (object) get_object_vars($this);
     }
 }

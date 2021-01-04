@@ -63,7 +63,7 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
     /**
      * {@inheritDoc}
      */
-    public function delete(int $id): bool
+    public function delete(int $id): void
     {
         // TODO: Implement delete() method.
         throw new NotImplementedException();

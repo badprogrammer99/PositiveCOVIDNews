@@ -6,6 +6,10 @@
         {
             "name": "José Simões",
             "email": "jose.etpr99@gmail.com"
+        },
+        {
+            "name": "Bruno Silva",
+            "email": "brunoaptsilva@gmail.com"
         }
     ],
     "require": {
@@ -14,7 +18,8 @@
         "guzzle/http": "*",
         "myclabs/php-enum": "*",
         "rakibtg/sleekdb": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-mysqli": "*"
     },
     "autoload": {
         "psr-4": {

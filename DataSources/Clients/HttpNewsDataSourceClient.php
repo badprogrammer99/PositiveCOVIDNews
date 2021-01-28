@@ -36,7 +36,7 @@ class HttpNewsDataSourceClient implements NewsDataSourceClient
         return $this->client->request(
             $options["REQUEST_METHOD"],
             $this->baseUrl . $dataSourceUri,
-            $options["ADDITIONAL_OPTIONS"])
+            $options["ADDITIONAL_OPTIONS"] ?? [])
         ->getBody();
     }
 }

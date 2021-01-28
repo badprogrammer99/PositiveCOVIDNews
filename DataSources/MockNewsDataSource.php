@@ -33,4 +33,12 @@ class MockNewsDataSource extends NewsDataSource
         $mockedNewsContent = $this->getNewsDataSourceClient()->doRequest($this->mockDataLocation);
         return $this->getNewsParser()->parseNewsData($mockedNewsContent);
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUserFriendlyDataSourceName(): string
+    {
+        return "Mocked source, to be used for testing purposes";
+    }
 }

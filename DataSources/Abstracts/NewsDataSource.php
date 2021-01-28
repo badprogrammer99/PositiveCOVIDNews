@@ -24,6 +24,11 @@ abstract class NewsDataSource
     private NewsParser $newsParser;
 
     /**
+     * @var array The request options to be used when making the request to the datasource client.
+     */
+    private array $requestOptions = [];
+
+    /**
      * NewsDataSource constructor.
      * @param NewsDataSourceClient $newsDataSourceClient The news datasource client
      * @param NewsParser $newsParser The news parser
@@ -65,6 +70,29 @@ abstract class NewsDataSource
     {
         $this->newsParser = $newsParser;
     }
+
+    /**
+     * @return array
+     */
+    public function getRequestOptions(): array
+    {
+        return $this->requestOptions;
+    }
+
+    /**
+     * Sets a request option to be used, inside the array.
+     * @param $key mixed The key of the request option
+     * @param $value mixed The value of the request option
+     */
+    public function setRequestOption($key, $value)
+    {
+        $this->requestOptions[$key] = $value;
+    }
+
+    /**
+     * @return string Gets the user friendly data source name.
+     */
+    public abstract function getUserFriendlyDataSourceName(): string;
 
     /**
      * @return NewsArticle[] The array of retrieved news articles.

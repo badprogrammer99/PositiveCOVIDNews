@@ -11,7 +11,7 @@ abstract class PaginatedNewsDataSource extends NewsDataSource
     /**
      * @var int The current page of the datasource.
      */
-    private int $currentPage;
+    private int $currentPage = 1;
 
     /**
      * The delay (in seconds) at which the Bot should scrape the news. If it's a paginated datasource,
@@ -23,6 +23,24 @@ abstract class PaginatedNewsDataSource extends NewsDataSource
      * @var int The page limit to which until news should be retrieved.
      */
     private int $pageLimit;
+
+    /**
+     * Gets the current datasource page.
+     * @return int
+     */
+    public function getCurrentPage(): int
+    {
+        return $this->currentPage;
+    }
+
+    /**
+     * Sets the page of the data source.
+     * @param int $page The page to which the data source should be set at.
+     */
+    public function setCurrentPage(int $page)
+    {
+        $this->currentPage = $page;
+    }
 
     /**
      * Gets the delay to be used between requests.
@@ -79,4 +97,27 @@ abstract class PaginatedNewsDataSource extends NewsDataSource
             $this->currentPage--;
         }
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function retrieveNewsData(): array
+    {
+        $newsArray = [];
+        $pageOnWhichScrapingWillStop = $this->getCurrentPage() + $this->getPageLimit() - 1;
+
+        while ($this->getCurrentPage() <= $pageOnWhichScrapingWillStop) {
+            $newsArray = array_merge($newsArray, $this->retrievePaginatedNewsData());
+            $this->navigateToNextPage();
+        }
+
+        return $newsArray;
+    }
+
+    /**
+     * This is where the actual logic of retrieving the news data from paginated datasources lie. This function will
+     * get called multiple times by the @see retrieveNewsData() function after pages are navigated.
+     * @return array The array with all the news.
+     */
+    public abstract function retrievePaginatedNewsData(): array;
 }

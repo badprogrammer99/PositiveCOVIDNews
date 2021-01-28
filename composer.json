@@ -19,7 +19,10 @@
         "myclabs/php-enum": "*",
         "rakibtg/sleekdb": "*",
         "ext-json": "*",
-        "ext-mysqli": "*"
+        "ext-mysqli": "*",
+        "ext-dom": "*",
+        "ext-xml": "*",
+        "ext-curl": "*"
     },
     "autoload": {
         "psr-4": {
@@ -29,7 +32,8 @@
             "Main\\": "Main",
             "Models\\": "Models",
             "Parsers\\": "Parsers",
-            "Storage\\": "Storage"
+            "Storage\\": "Storage",
+            "Wordpress\\": "Wordpress"
         }
     }
 }

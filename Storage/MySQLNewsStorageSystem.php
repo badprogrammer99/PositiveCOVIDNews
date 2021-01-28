@@ -1,21 +1,20 @@
-<?php
+<?php /** @noinspection SqlNoDataSourceInspection */
 
 namespace Storage;
 
 use DateTime;
-use Exceptions\NotImplementedException;
-use Models\DatabaseCredentials;
+use Exception;
 use Models\NewsArticle;
 use mysqli;
+use mysqli_sql_exception;
+use stdClass;
 use Storage\Interfaces\NewsStorageSystem;
-use RuntimeException;
 
 /**
  * Class MySQLNewsStorageSystem Implements a news storage system using the MySQL relational database.
  * @author Bruno Silva
  * @package Storage
  */
-
 class MySQLNewsStorageSystem implements NewsStorageSystem
 {
     /**
@@ -36,19 +35,16 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
      */
     private const CREATE_SCRAPED_NEWS_TABLE = "-- noinspection SqlDialectInspection
         CREATE TABLE IF NOT EXISTS ACA.News(
-        _id INT NOT NULL AUTO_INCREMENT,
+        id INT NOT NULL AUTO_INCREMENT,
         title TEXT NOT NULL,
         author TEXT NOT NULL,
         url TEXT NOT NULL,
-        published_at DATETIME NOT NULL,
+        source TEXT NOT NULL,
+        publishedAt DATETIME NOT NULL,
         content TEXT NOT NULL,
-        PRIMARY KEY(_id));
+        active BOOLEAN NOT NULL,
+        PRIMARY KEY(id));
     ";
-
-    /**
-     * @var DatabaseCredentials The class which will hold the credentials of our database.
-     */
-    private DatabaseCredentials $databaseCredentials;
 
     /**
      * @var mysqli The instance of our database.
@@ -56,60 +52,88 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
     private mysqli $db;
 
     /**
-     * MySQLNewsStorageSystem constructor.
-     */
-    public function __construct(){
-        $this->databaseCredentials = new DatabaseCredentials(self::DEFAULT_HOST,
-            self::DEFAULT_USER,
-            self::DEFAULT_PASS,
-            self::DEFAULT_PORT
-        );
-    }
-
-    /**
      * Sets up our DB (connects to the database host and then proceeds to create the schemas and tables if they are not
      * created yet). Also sets up mysqli to throw on every MySQL error that could happen.
      */
-    public function setupDb() {
-        // throw on every mysqli error that could possibly happen
+    public function __construct() {
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-        $this->db = mysqli_connect($this->databaseCredentials->getHost(),
-            $this->databaseCredentials->getUser(),
-            $this->databaseCredentials->getPass(),
-            "",
-            $this->databaseCredentials->getPort()
+        $this->db = mysqli_connect(self::DEFAULT_HOST,
+            self::DEFAULT_USER,
+            self::DEFAULT_PASS,
+            null,
+            self::DEFAULT_PORT
         );
 
         $this->db->query(self::CREATE_SCHEMA_SCRAPED_NEWS_MEMORY);
         $this->db->query(self::CREATE_SCRAPED_NEWS_TABLE);
+        mysqli_set_charset($this->db, "utf8");
     }
 
     /**
      * {@inheritDoc}
+     * @throws Exception
      */
     public function getAll(): array
     {
-        // TODO: Implement getAll() method.
-        throw new NotImplementedException();
+        $query = "SELECT * FROM ACA.news";
+        $results = mysqli_fetch_all($this->db->query($query), MYSQLI_ASSOC);
+
+        $newsArticles = [];
+        foreach ($results as $result) {
+            $newsArticles[] = NewsArticle::fromAssociativeArr($result);
+        }
+
+        return $newsArticles;
     }
 
     /**
      * {@inheritDoc}
+     * @throws Exception
      */
-    function getById(int $id): NewsArticle | null
+    public function getById(int $id): NewsArticle | null
     {
-        // TODO: Implement getById() method.
-        throw new NotImplementedException();
+        $query = "SELECT * FROM ACA.news WHERE id=$id";
+        $result = $this->db->query($query)->fetch_assoc();
+
+        if ($result != null) {
+            return NewsArticle::fromAssociativeArr($result[0]);
+        }
+
+        return null;
     }
 
     /**
      * {@inheritDoc}
+     * @throws Exception
      */
     public function getByDate(DateTime $dateTime): NewsArticle | array | null
     {
-        // TODO: Implement getByDate() method.
-        throw new NotImplementedException();
+        $query = "SELECT * FROM ACA.news WHERE publishedAt=" . $dateTime->format("Y-m-d h:m:s");
+        $results = $this->db->query($query)->fetch_assoc();
+
+        $news = [];
+
+        if ($results != null) {
+            if (count($results) > 1) {
+                foreach ($results as $result) {
+                    $news[] = NewsArticle::fromAssociativeArr($result);
+                }
+            } else {
+                $news[] = NewsArticle::fromAssociativeArr($results[0]);
+            }
+
+        }
+
+        return $news;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getLastInsertedId(): int
+    {
+        return mysqli_insert_id($this->db) + 1;
     }
 
     /**
@@ -117,8 +141,23 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
      */
     public function insert(NewsArticle $newsArticle): void
     {
-        // TODO: Implement insert() method.
-        throw new NotImplementedException();
+        $newsArticle = $this->escapeNewsArticle($newsArticle);
+
+        $query = "INSERT INTO ACA.news VALUES (
+             " . $newsArticle->id . ",
+             " . "\"$newsArticle->title\"" . ",
+             " . "\"$newsArticle->author\"" . ",
+             " . "\"$newsArticle->url . \"" . ",
+             " . "\"$newsArticle->source\"" . ",
+             " . "\"$newsArticle->publishedAt\"" . ",
+             " . "\"$newsArticle->content\"" . ",
+             " . $newsArticle->active . ")";
+
+        try {
+            $this->db->query($query);
+        } catch (mysqli_sql_exception $e) {
+            echo $e->getMessage();
+        }
     }
 
     /**
@@ -126,8 +165,31 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
      */
     public function insertAll(array $newsArticles): void
     {
-        // TODO: Implement insertAll() method.
-        throw new NotImplementedException();
+        foreach ($newsArticles as $newsArticle) {
+            $this->insert($newsArticle);
+        }
+    }
+
+    /**
+     * @inheritDoc
+     * @throws Exception
+     */
+    public function update(NewsArticle $newsArticle): void
+    {
+        if ($this->getById($newsArticle->getId()) !== null) {
+            $newsArticle = $this->escapeNewsArticle($newsArticle);
+
+            $query = "UPDATE ACA.news
+            SET title=" . "\"$newsArticle->id\"" . ",
+            author=" . "\"$newsArticle->author\"" . ",
+            url=" . "\"$newsArticle->url\"" . ",
+            source=" . "\"$newsArticle->source\"" . ",
+            publishedAt=" . "\"$newsArticle->publishedAt\"" . ",
+            content=" . "\"$newsArticle->content\"" . ",
+            active=$newsArticle->active WHERE id=$newsArticle->id";
+
+            $this->db->query($query);
+        }
     }
 
     /**
@@ -135,7 +197,58 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
      */
     public function delete(int $id): void
     {
-        // TODO: Implement delete() method.
-        throw new NotImplementedException();
+        $query = "DELETE * FROM ACA.news WHERE id=$id";
+        $this->db->query($query);
+    }
+
+    /**
+     * {@inheritDoc}
+     * @throws Exception
+     */
+    public function markNewsArticleAsActive(int $id): void
+    {
+        $record = $this->getById($id);
+        $record->setActive(true);
+        $this->update($record);
+    }
+
+    /**
+     * {@inheritDoc}
+     * @throws Exception
+     */
+    public function markNewsArticleAsInactive(int $id): void
+    {
+        $record = $this->getById($id);
+        $record->setActive(false);
+        $this->update($record);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUserFriendlyNewsStorageName(): string
+    {
+        return "MySQL database";
+    }
+
+    /**
+     * Escapes the news article before sending it to the database.
+     * @param NewsArticle $newsArticle The news article to be escaped.
+     * @return stdClass The escaped news article.
+     */
+    private function escapeNewsArticle(NewsArticle $newsArticle): stdClass
+    {
+        $escapedNewsArticle = new stdClass();
+
+        $escapedNewsArticle->id = $newsArticle->getId() === null ? 'null' : $newsArticle->getId();
+        $escapedNewsArticle->title = mysqli_real_escape_string($this->db, $newsArticle->getTitle());
+        $escapedNewsArticle->author = mysqli_real_escape_string($this->db, $newsArticle->getAuthor());
+        $escapedNewsArticle->url = $newsArticle->getUrl();
+        $escapedNewsArticle->source = mysqli_real_escape_string($this->db, $newsArticle->getSource());
+        $escapedNewsArticle->publishedAt = $newsArticle->getPublishedAt()->format("Y-m-d h:m:s");
+        $escapedNewsArticle->content = mysqli_real_escape_string($this->db, $newsArticle->getContent());
+        $escapedNewsArticle->active = $newsArticle->isActive() ? 1 : 0;
+
+        return $escapedNewsArticle;
     }
 }

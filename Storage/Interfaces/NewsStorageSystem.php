@@ -32,6 +32,12 @@ interface NewsStorageSystem
     public function getByDate(DateTime $dateTime): NewsArticle | array | null;
 
     /**
+     * Gets the ID of the record who was inserted the latest.
+     * @return int
+     */
+    public function getLastInsertedId(): int;
+
+    /**
      * Inserts a new news article into the database.
      * @param NewsArticle $newsArticle The news article to be inserted.
      */
@@ -44,9 +50,33 @@ interface NewsStorageSystem
     public function insertAll(array $newsArticles): void;
 
     /**
+     * Updates a news article.
+     * @param NewsArticle $newsArticle
+     */
+    public function update(NewsArticle $newsArticle): void;
+
+    /**
      * Deletes a news article from the database.
      * @param int $id The id of the news article to be deleted.
      * @throws Exception If the article couldn't be deleted.
      */
     public function delete(int $id): void;
+
+    /**
+     * Marks a news article as active.
+     * @param int $id The ID of the news article to be marked as active.
+     */
+    public function markNewsArticleAsActive(int $id): void;
+
+    /**
+     * Marks a news article as inactive.
+     * @param int $id The ID of the news article to be marked as not active.
+     */
+    public function markNewsArticleAsInactive(int $id): void;
+
+    /**
+     * Gets the user friendly name of the storage system.
+     * @return string The user friendly name of the storage system.
+     */
+    public function getUserFriendlyNewsStorageName(): string;
 }

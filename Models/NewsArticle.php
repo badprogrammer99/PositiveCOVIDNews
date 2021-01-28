@@ -13,6 +13,11 @@ use JsonSerializable;
 class NewsArticle implements JsonSerializable
 {
     /**
+     * @var ?int The ID of the news article.
+     */
+    private ?int $id;
+
+    /**
      * @var string Title of the news article.
      */
     private string $title;
@@ -28,6 +33,11 @@ class NewsArticle implements JsonSerializable
     private string $url;
 
     /**
+     * @var string The source of the news article.
+     */
+    private string $source;
+
+    /**
      * @var DateTime Time at which the news article was published.
      */
     private DateTime $publishedAt;
@@ -38,18 +48,75 @@ class NewsArticle implements JsonSerializable
     private string $content;
 
     /**
-     * NewsArticle constructor.
-     * @param array $properties
+     * @var bool Was this news article already republished in some blog?
+     */
+    private bool $active;
+
+    /**
+     * Constructs an instance of this class using already initialized properties.
+     * @param $id ?int
+     * @param $title string
+     * @param $author string
+     * @param $url string
+     * @param $source string
+     * @param $publishedAt DateTime
+     * @param $content string
+     * @param $active bool
+     * @return NewsArticle The already constructed news article.
+     */
+    public static function fromProperties(?int $id, string $title, string $author, string $url,
+                                          string $source, DateTime $publishedAt, string $content, bool $active): NewsArticle
+    {
+        $newsArticle = new NewsArticle();
+        $newsArticle->setId($id);
+        $newsArticle->setTitle($title);
+        $newsArticle->setAuthor($author);
+        $newsArticle->setUrl($url);
+        $newsArticle->setSource($source);
+        $newsArticle->setPublishedAt($publishedAt);
+        $newsArticle->setContent($content);
+        $newsArticle->setActive($active);
+        return $newsArticle;
+    }
+
+    /**
+     * Constructs an instance of this class from an associative array.
+     * @param array $record The properties used to initialize the fields of the NewsArticle type.
+     * @return NewsArticle
      * @throws Exception
      */
-    public function __construct(array $properties = array()) {
-        foreach ($properties as $key => $value) {
+    public static function fromAssociativeArr(array $record = array()): NewsArticle
+    {
+        $newsArticle = new NewsArticle();
+
+        foreach ($record as $key => $value) {
             if ($key == "publishedAt") {
-                $this->{$key} = new DateTime($value["date"]);
+                if (isset($value["date"])) $newsArticle->{$key} = new DateTime($value["date"]);
+                else $newsArticle->{$key} = new DateTime($value);
+            } else if ($key == "active" && is_int($key)) {
+                $newsArticle->{$key} = $key == 1;
             } else {
-                $this->{$key} = $value;
+                $newsArticle->{$key} = $value;
             }
         }
+
+        return $newsArticle;
+    }
+
+    /**
+     * @return ?int
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param ?int $id
+     */
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
     }
 
     /**
@@ -101,6 +168,22 @@ class NewsArticle implements JsonSerializable
     }
 
     /**
+     * @return string
+     */
+    public function getSource(): string
+    {
+        return $this->source;
+    }
+
+    /**
+     * @param string $source
+     */
+    public function setSource(string $source): void
+    {
+        $this->source = $source;
+    }
+
+    /**
      * @return DateTime
      */
     public function getPublishedAt(): DateTime
@@ -130,6 +213,35 @@ class NewsArticle implements JsonSerializable
     public function setContent(string $content): void
     {
         $this->content = $content;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isActive(): bool
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param bool $active
+     */
+    public function setActive(bool $active): void
+    {
+        $this->active = $active;
+    }
+
+    /**
+     * Tests if a news article is equal to another. Given the volatility of the news articles, we will compare their URL's
+     * considering they're the most non volatile attribute in news articles.
+     * @param NewsArticle $other
+     * @return bool If this news article is equals to the news article passed in the parameter.
+     */
+    public function equals(NewsArticle $other)
+    {
+        if ($this->getId() != null && $other->getId() != null)
+            return $this->getId() == $other->getId() && $this->url == $other->url;
+        return $this->url == $other->url;
     }
 
     /**

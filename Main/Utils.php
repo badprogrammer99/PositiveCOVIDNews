@@ -4,6 +4,7 @@ namespace Main;
 
 use DataSources\Abstracts\NewsDataSource;
 use RuntimeException;
+use Storage\Interfaces\NewsStorageSystem;
 
 /**
  * Class Utils A class of utility methods to be used throughout the different classes of this project.
@@ -21,13 +22,35 @@ class Utils
     }
 
     /**
-     * Check if the array only has objects composed of news datasource instances.
+     * Check if the passed object parameter is a news storage system instance.
+     * @param mixed $obj
+     */
+    public static function checkIfObjIsNewsStorageSystemInstance(mixed $obj)
+    {
+        if (!$obj instanceof NewsStorageSystem)
+            throw new RuntimeException("Object is not a NewsStorageSystem instance!");
+    }
+
+
+    /**
+     * Check if the array only has objects composed of news data source instances.
      * @param array $arr
      */
     public static function checkIfArrayIsComposedOfNewsDataSourceInstances(array $arr)
     {
         foreach ($arr as $value) {
             self::checkIfObjIsNewsDataSourceInstance($value);
+        }
+    }
+
+    /**
+     * Check if the array only has objects composed of news storage system instances.
+     * @param array $arr
+     */
+    public static function checkIfArrayIsComposedOfNewsStorageSystemInstances(array $arr)
+    {
+        foreach ($arr as $value) {
+            self::checkIfObjIsNewsStorageSystemInstance($value);
         }
     }
 
@@ -56,6 +79,20 @@ class Utils
         }
 
         return $newArr;
+    }
+
+    /**
+     * Parses a command line argument.
+     * @param $arg
+     * @return array The parsed command line argument.
+     */
+    public static function parseArgument($arg): array
+    {
+        if (str_contains($arg, ",")) {
+            return explode(",", $arg);
+        }
+
+        return array($arg);
     }
 }
 

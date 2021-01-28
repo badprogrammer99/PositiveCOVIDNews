@@ -5,7 +5,6 @@ namespace Main;
 use DataSources\Abstracts\NewsDataSource;
 use Language\Interfaces\SentimentAnalyzer;
 use Language\SentimentScore;
-use SplQueue;
 use Storage\Interfaces\NewsStorageSystem;
 
 /**
@@ -15,14 +14,14 @@ use Storage\Interfaces\NewsStorageSystem;
 class Bot
 {
     /**
-     * @var SplQueue The queue of news datasources to be used when scrapping the websites.
+     * @var NewsDataSource[] The array of news data sources to be used when scrapping the websites.
      */
-    private SplQueue $newsDataSources;
+    private array $newsDataSources;
 
     /**
-     * @var NewsStorageSystem The news storage system to be used when saving the news.
+     * @var NewsStorageSystem[] The array of news storage systems to be used when saving the news.
      */
-    private NewsStorageSystem $newsStorageSystem;
+    private array $newsStorageSystems;
 
     /**
      * @var SentimentAnalyzer The sentiment analyzer used to analyze the various processed news.
@@ -36,70 +35,77 @@ class Bot
 
     /**
      * Private bot constructor.
-     * @param SplQueue $newsDataSources
-     * @param NewsStorageSystem $newsStorageSystem
+     * @param NewsDataSource[] $newsDataSources
+     * @param NewsStorageSystem[] $newsStorageSystems
      * @param SentimentAnalyzer $sentimentAnalyzer
      */
-    private function __construct(SplQueue $newsDataSources, NewsStorageSystem $newsStorageSystem, SentimentAnalyzer $sentimentAnalyzer) {
+    private function __construct(array $newsDataSources, array $newsStorageSystems, SentimentAnalyzer $sentimentAnalyzer)
+    {
         $this->newsDataSources = $newsDataSources;
-        $this->newsStorageSystem = $newsStorageSystem;
+        $this->newsStorageSystems = $newsStorageSystems;
         $this->sentimentAnalyzer = $sentimentAnalyzer;
     }
 
     /**
-     * Instantiates a bot with a single datasource.
-     * @param NewsDataSource $newsDataSource
-     * @param NewsStorageSystem $newsStorageSystem
+     * Instantiates a bot with multiple data sources.
+     * @param NewsDataSource[] $newsDataSources
+     * @param NewsStorageSystem[] $newsStorageSystems
      * @param SentimentAnalyzer $sentimentAnalyzer
      * @return Bot
      */
-    public static function createBotFromDataSource(NewsDataSource $newsDataSource, NewsStorageSystem $newsStorageSystem,
-                                                      SentimentAnalyzer $sentimentAnalyzer): Bot {
-        $newsDataSources = new SplQueue();
-        $newsDataSources->push($newsDataSource);
-        return new Bot($newsDataSources, $newsStorageSystem, $sentimentAnalyzer);
-    }
-
-    /**
-     * Instantiates a bot with multiple datasources.
-     * @param array $newsDataSources
-     * @param NewsStorageSystem $newsStorageSystem
-     * @param SentimentAnalyzer $sentimentAnalyzer
-     * @return Bot
-     */
-    public static function createBotFromMultipleDataSources(array $newsDataSources, NewsStorageSystem $newsStorageSystem,
-                                                            SentimentAnalyzer $sentimentAnalyzer): Bot {
-        $newsDataSourcesToBeUsed = new SplQueue();
-
+    public static function createBot(array $newsDataSources, array $newsStorageSystems,
+                                     SentimentAnalyzer $sentimentAnalyzer): Bot
+    {
         Utils::checkIfArrayIsComposedOfNewsDataSourceInstances($newsDataSources);
+        Utils::checkIfArrayIsComposedOfNewsStorageSystemInstances($newsStorageSystems);
 
-        foreach ($newsDataSources as $newsDataSource)
-            $newsDataSourcesToBeUsed->push($newsDataSource);
-
-        return new Bot($newsDataSourcesToBeUsed, $newsStorageSystem, $sentimentAnalyzer);
+        return new Bot($newsDataSources, $newsStorageSystems, $sentimentAnalyzer);
     }
 
     /**
      * Add a NewsDataSource to be used by the bot when retrieving news.
      * @param NewsDataSource $newsDataSource
      */
-    public function addNewsDataSource(NewsDataSource $newsDataSource) {
-        $this->newsDataSources->push($newsDataSource);
+    public function addNewsDataSource(NewsDataSource $newsDataSource)
+    {
+        $this->newsDataSources[] = $newsDataSource;
     }
 
     /**
      * Adds an array of NewsDataSource objects to be used by the bot when retrieving news.
-     * @param array $newsDataSources
+     * @param NewsDataSource[] $newsDataSources
      */
-    public function addNewsDataSources(array $newsDataSources) {
+    public function addNewsDataSources(array $newsDataSources)
+    {
         Utils::checkIfArrayIsComposedOfNewsDataSourceInstances($newsDataSources);
 
         foreach ($newsDataSources as $newsDataSource)
-            $this->newsDataSources->push($newsDataSource);
+            $this->newsDataSources[] = $newsDataSource;
     }
 
     /**
-     * Get the delay to be applied when searching between datasources.
+     * Adds a NewsStorageSystem to be used by the bot when saving news.
+     * @param NewsStorageSystem $newsStorageSystem
+     */
+    public function addNewsStorageSystem(NewsStorageSystem $newsStorageSystem)
+    {
+        $this->newsStorageSystems[] = $newsStorageSystem;
+    }
+
+    /**
+     * Adds an array of NewsStorageSystem to be used by the bot when saving news.
+     * @param array $newsStorageSystems
+     */
+    public function addNewsStorageSystems(array $newsStorageSystems)
+    {
+        Utils::checkIfArrayIsComposedOfNewsStorageSystemInstances($newsStorageSystems);
+
+        foreach ($newsStorageSystems as $newsStorageSystem)
+            $this->newsStorageSystems[] = $newsStorageSystem;
+    }
+
+    /**
+     * Get the delay to be applied when searching between data sources.
      * @return int
      */
     public function getDelay(): int {
@@ -107,7 +113,7 @@ class Bot
     }
 
     /**
-     * @param int $delay the delay (in seconds) to be applied when searching between datasources.
+     * @param int $delay the delay (in seconds) to be applied when searching between data sources.
      */
     public function setDelay(int $delay): void {
         $this->delay = $delay;
@@ -116,31 +122,26 @@ class Bot
     /**
      * Starts the bot execution.
      * Due to the blocking single-threaded nature of the PHP language, we can't create background threads, so this bot will
-     * block execution for a while while retrieving news articles from a datasource, especially on paginated datasources which have
+     * block execution for a while while retrieving news articles from a datasource, especially on paginated data sources which have
      * delayed requests.
      */
     public function run() {
-        while (count($this->newsDataSources) > 0) {
-            foreach ($this->newsDataSources as $newsDataSource) {
-                $newsArticlesData = $newsDataSource->retrieveNewsData();
-
-                foreach ($newsArticlesData as $newsArticle) {
-                    $content = $newsArticle->getContent();
-                    $sentiment = $this->sentimentAnalyzer->getSentimentForText($content);
-                    // echo $sentiment->getValue() . PHP_EOL;
-
-                    /** @noinspection PhpNonStrictObjectEqualityInspection */
-                    if ($sentiment == SentimentScore::POSITIVE()) {
-                        // echo "POSITIVE NEWS FOUND! THE CONTENT IS AS IT FOLLOWS: " . PHP_EOL . $content . PHP_EOL;
-                        $this->newsStorageSystem->insert($newsArticle);
+        foreach ($this->newsDataSources as $newsDataSource) {
+            $newsArticlesData = $newsDataSource->retrieveNewsData();
+            foreach ($newsArticlesData as $newsArticle) {
+                $title = $newsArticle->getTitle();
+                $content = $newsArticle->getContent();
+                $titleSentiment = $this->sentimentAnalyzer->getSentimentForText($title);
+                $contentSentiment = $this->sentimentAnalyzer->getSentimentForText($content);
+                if ($titleSentiment == SentimentScore::POSITIVE() && $contentSentiment == SentimentScore::POSITIVE()) {
+                    foreach ($this->newsStorageSystems as $newsStorageSystem) {
+                        $newsStorageSystem->insert($newsArticle);
                     }
                 }
+            }
 
-                $this->newsDataSources->pop();
-
-                if ($this->delay > 0) {
-                    sleep($this->delay);
-                }
+            if ($this->delay > 0) {
+                sleep($this->delay);
             }
         }
     }

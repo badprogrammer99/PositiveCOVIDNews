@@ -7,33 +7,27 @@ use Exception;
 use Models\NewsArticle;
 use Parsers\Interfaces\NewsParser;
 
-/**
- * Class RapidAPINewsParser Rapid API news parser.
- * @package Parsers
- */
-class RapidAPINewsParser implements NewsParser
+class NewsAPINewsParser implements NewsParser
 {
     /**
-     * Parses news data from the RapidAPI news datasource.
-     * @param $newsData
-     * @return NewsArticle[] An array of parsed news articles.
+     * @inheritDoc
      * @throws Exception
      */
     public function parseNewsData($newsData): array
     {
         $decodedNewsArticles = json_decode($newsData, $flags = JSON_THROW_ON_ERROR);
-        $newsArticles = $decodedNewsArticles["news"];
+        $newsArticles = $decodedNewsArticles["articles"];
         $newsArray = [];
 
         for ($i = 0; $i < count($newsArticles); $i++) {
             $unparsedNewsArticle = $newsArticles[$i];
             $newsArticle = NewsArticle::fromProperties(null,
                 $unparsedNewsArticle["title"],
-                "",
-                $unparsedNewsArticle["webUrl"],
-                "",
-                new DateTime($unparsedNewsArticle["publishedDateTime"]),
-                $unparsedNewsArticle["excerpt"],
+                $unparsedNewsArticle["author"] ?? "",
+                $unparsedNewsArticle["url"],
+                $unparsedNewsArticle["source"]["name"],
+                new DateTime($unparsedNewsArticle["publishedAt"]),
+                $unparsedNewsArticle["description"] . "\n\nRead more in: " . $unparsedNewsArticle["url"],
                 false);
             $newsArray[] = $newsArticle;
         }

@@ -14,7 +14,7 @@ abstract class PaginatedNewsDataSource extends NewsDataSource
     private int $currentPage = 1;
 
     /**
-     * The delay (in seconds) at which the Bot should scrape the news. If it's a paginated datasource,
+     * The delay (in seconds) at which the NewsExtractorBot should scrape the news. If it's a paginated datasource,
      * then we should have a delay set on in order to avoid being throttled by the API provider.
      */
     private int $delay;

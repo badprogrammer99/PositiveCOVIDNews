@@ -71,12 +71,36 @@ class JsonDatabaseNewsStorageSystem implements NewsStorageSystem
 
     /**
      * @inheritDoc
+     * @throws NotImplementedException
      */
-    public function getByDate(DateTime $dateTime): NewsArticle | array | null
+    public function getByDate(DateTime $dateTime): array | null
     {
         // not implemented for now. throws everytime it's called. it's hard to retrieve something by datetime
-        // in a json file. figure out a way
+        // in a json file. TODO: figure out a way
         throw new NotImplementedException();
+    }
+
+    /**
+     * @inheritDoc
+     * @throws Exception
+     */
+    public function getByTitle(string $title): array | null
+    {
+        $records = $this->sleekDb
+            ->where("title", "=", $title)
+            ->fetch();
+
+        $newsArticles = [];
+
+        if ($records !== null) {
+            foreach ($records as $record) {
+                $newsArticles[] = NewsArticle::fromAssociativeArr($record);
+            }
+
+            return $newsArticles;
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -101,8 +125,7 @@ class JsonDatabaseNewsStorageSystem implements NewsStorageSystem
     public function insert(NewsArticle $newsArticle): void
     {
         $newsArticle->setId($this->getLastInsertedId());
-        $convertedNewsArticle = Utils::convertObjToAssociativeArr($newsArticle);
-        $this->sleekDb->insert($convertedNewsArticle);
+        $this->sleekDb->insert(Utils::convertObjToAssociativeArr($newsArticle));
     }
 
     /**

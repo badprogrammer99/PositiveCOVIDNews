@@ -6,7 +6,6 @@ use DateTime;
 use Exception;
 use Models\NewsArticle;
 use mysqli;
-use mysqli_sql_exception;
 use stdClass;
 use Storage\Interfaces\NewsStorageSystem;
 
@@ -56,7 +55,7 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
      * created yet). Also sets up mysqli to throw on every MySQL error that could happen.
      */
     public function __construct() {
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        mysqli_report(MYSQLI_REPORT_ERROR);
 
         $this->db = mysqli_connect(self::DEFAULT_HOST,
             self::DEFAULT_USER,
@@ -97,7 +96,7 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
         $result = $this->db->query($query)->fetch_assoc();
 
         if ($result != null) {
-            return NewsArticle::fromAssociativeArr($result[0]);
+            return NewsArticle::fromAssociativeArr($result);
         }
 
         return null;
@@ -107,25 +106,36 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
      * {@inheritDoc}
      * @throws Exception
      */
-    public function getByDate(DateTime $dateTime): NewsArticle | array | null
+    public function getByDate(DateTime $dateTime): array | null
     {
-        $query = "SELECT * FROM ACA.news WHERE publishedAt=" . $dateTime->format("Y-m-d h:m:s");
-        $results = $this->db->query($query)->fetch_assoc();
+        $formattedDate = $dateTime->format("Y-m-d");
+        $query = "SELECT * FROM ACA.news WHERE publishedAt='$formattedDate'";
+        $results = $this->db->query($query);
 
-        $news = [];
-
-        if ($results != null) {
-            if (count($results) > 1) {
-                foreach ($results as $result) {
-                    $news[] = NewsArticle::fromAssociativeArr($result);
-                }
-            } else {
-                $news[] = NewsArticle::fromAssociativeArr($results[0]);
-            }
-
+        $newsArticles = [];
+        while ($result = $results->fetch_assoc()) {
+            $newsArticles[] = NewsArticle::fromAssociativeArr($result);
         }
 
-        return $news;
+        return count($newsArticles) > 0 ? $newsArticles : null;
+    }
+
+    /**
+     * {@inheritDoc}
+     * @throws Exception
+     */
+    public function getByTitle(string $title): array | null
+    {
+        $escapedTitle = mysqli_real_escape_string($this->db, $title);
+        $query = "SELECT * FROM ACA.news WHERE title='$escapedTitle'";
+        $results = $this->db->query($query);
+
+        $newsArticles = [];
+        while ($result = $results->fetch_assoc()) {
+            $newsArticles[] = NewsArticle::fromAssociativeArr($result);
+        }
+
+        return count($newsArticles) > 0 ? $newsArticles : null;
     }
 
     /**
@@ -153,11 +163,7 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
              " . "\"$newsArticle->content\"" . ",
              " . $newsArticle->active . ")";
 
-        try {
-            $this->db->query($query);
-        } catch (mysqli_sql_exception $e) {
-            echo $e->getMessage();
-        }
+        $this->db->query($query);
     }
 
     /**
@@ -180,7 +186,7 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
             $newsArticle = $this->escapeNewsArticle($newsArticle);
 
             $query = "UPDATE ACA.news
-            SET title=" . "\"$newsArticle->id\"" . ",
+            SET title=" . "\"$newsArticle->title\"" . ",
             author=" . "\"$newsArticle->author\"" . ",
             url=" . "\"$newsArticle->url\"" . ",
             source=" . "\"$newsArticle->source\"" . ",
@@ -245,7 +251,7 @@ class MySQLNewsStorageSystem implements NewsStorageSystem
         $escapedNewsArticle->author = mysqli_real_escape_string($this->db, $newsArticle->getAuthor());
         $escapedNewsArticle->url = $newsArticle->getUrl();
         $escapedNewsArticle->source = mysqli_real_escape_string($this->db, $newsArticle->getSource());
-        $escapedNewsArticle->publishedAt = $newsArticle->getPublishedAt()->format("Y-m-d h:m:s");
+        $escapedNewsArticle->publishedAt = $newsArticle->getPublishedAt()->format("Y-m-d");
         $escapedNewsArticle->content = mysqli_real_escape_string($this->db, $newsArticle->getContent());
         $escapedNewsArticle->active = $newsArticle->isActive() ? 1 : 0;
 

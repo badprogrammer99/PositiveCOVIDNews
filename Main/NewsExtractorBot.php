@@ -8,10 +8,10 @@ use Language\SentimentScore;
 use Storage\Interfaces\NewsStorageSystem;
 
 /**
- * Class Bot The class responsible for periodically scraping news articles. So far, and considering the thematic of this
- * project, the Bot will scrape positive news about COVID-19, with the help of the Google Cloud Natural Language API.
+ * Class NewsExtractorBot The class responsible for periodically scraping news articles. So far, and considering the thematic of this
+ * project, the NewsExtractorBot will scrape positive news about COVID-19, with the help of the Google Cloud Natural Language API.
  */
-class Bot
+class NewsExtractorBot
 {
     /**
      * @var NewsDataSource[] The array of news data sources to be used when scrapping the websites.
@@ -51,15 +51,15 @@ class Bot
      * @param NewsDataSource[] $newsDataSources
      * @param NewsStorageSystem[] $newsStorageSystems
      * @param SentimentAnalyzer $sentimentAnalyzer
-     * @return Bot
+     * @return NewsExtractorBot
      */
     public static function createBot(array $newsDataSources, array $newsStorageSystems,
-                                     SentimentAnalyzer $sentimentAnalyzer): Bot
+                                     SentimentAnalyzer $sentimentAnalyzer): NewsExtractorBot
     {
         Utils::checkIfArrayIsComposedOfNewsDataSourceInstances($newsDataSources);
         Utils::checkIfArrayIsComposedOfNewsStorageSystemInstances($newsStorageSystems);
 
-        return new Bot($newsDataSources, $newsStorageSystems, $sentimentAnalyzer);
+        return new NewsExtractorBot($newsDataSources, $newsStorageSystems, $sentimentAnalyzer);
     }
 
     /**
@@ -94,7 +94,7 @@ class Bot
 
     /**
      * Adds an array of NewsStorageSystem to be used by the bot when saving news.
-     * @param array $newsStorageSystems
+     * @param NewsStorageSystem[] $newsStorageSystems
      */
     public function addNewsStorageSystems(array $newsStorageSystems)
     {
@@ -127,15 +127,18 @@ class Bot
      */
     public function run() {
         foreach ($this->newsDataSources as $newsDataSource) {
+            echo "Extracting news from the " . $newsDataSource->getUserFriendlyDataSourceName() . " data source." . PHP_EOL;
             $newsArticlesData = $newsDataSource->retrieveNewsData();
             foreach ($newsArticlesData as $newsArticle) {
                 $title = $newsArticle->getTitle();
-                $content = $newsArticle->getContent();
                 $titleSentiment = $this->sentimentAnalyzer->getSentimentForText($title);
-                $contentSentiment = $this->sentimentAnalyzer->getSentimentForText($content);
-                if ($titleSentiment == SentimentScore::POSITIVE() && $contentSentiment == SentimentScore::POSITIVE()) {
+                if ($titleSentiment == SentimentScore::POSITIVE()) {
                     foreach ($this->newsStorageSystems as $newsStorageSystem) {
-                        $newsStorageSystem->insert($newsArticle);
+                        // avoid repeated news
+                        if ($newsStorageSystem->getByTitle($newsArticle->getTitle()) == null) {
+                            echo "Inserting news article with the title '$title' in the news storage system." . PHP_EOL;
+                            $newsStorageSystem->insert($newsArticle);
+                        }
                     }
                 }
             }

@@ -26,10 +26,16 @@ interface NewsStorageSystem
 
     /**
      * @param DateTime $dateTime The date of the news to be retrieved.
-     * @return NewsArticle|array|null A single news article if only one news article was found pertaining to a specific
+     * @return array|null A single news article if only one news article was found pertaining to a specific
      * date, an array of news articles if more than one news article was found, and null if none was found.
      */
-    public function getByDate(DateTime $dateTime): NewsArticle | array | null;
+    public function getByDate(DateTime $dateTime): array | null;
+
+    /**
+     * @param string $title The title of the news to be retrieved.
+     * @return array|null An array of news articles, and null if no news article was found with the passed title.
+     */
+    public function getByTitle(string $title): array | null;
 
     /**
      * Gets the ID of the record who was inserted the latest.

@@ -9,7 +9,7 @@ use DataSources\CovidRapidAPINewsDataSource;
 use DataSources\MockNewsDataSource;
 use Language\GoogleSentimentAnalyzer;
 use Language\Interfaces\SentimentAnalyzer;
-use Main\Bot;
+use Main\NewsExtractorBot;
 use Main\Utils;
 use Storage\Interfaces\NewsStorageSystem;
 use Storage\JsonDatabaseNewsStorageSystem;
@@ -73,7 +73,7 @@ class ExtractPositiveNews
     /**
      * ExtractPositiveNews constructor. Also registers a pre-defined set of available news data sources and storage systems
      * that the user can use when calling this script from a command line.
-     * @param $arguments array The command-line arguments
+     * @param array $arguments The command-line arguments
      */
     public function __construct($arguments)
     {
@@ -90,7 +90,7 @@ class ExtractPositiveNews
      */
     public function run($interpretedUserArguments)
     {
-        $bot = Bot::createBot($interpretedUserArguments["newsDataSourcesToBeUsed"],
+        $bot = NewsExtractorBot::createBot($interpretedUserArguments["newsDataSourcesToBeUsed"],
             $interpretedUserArguments["newsStorageSystemsToBeUsed"],
             $this->sentimentAnalyzer);
         $bot->setDelay(2);
@@ -178,7 +178,7 @@ class ExtractPositiveNews
                 if ($newsDataSource != null) {
                     $userArguments["newsDataSourcesToBeUsed"][] = $newsDataSource;
                 } else {
-                    die("The data source number " . $newsDataSourcePos . " does not exist.");
+                    die("This news data source does not exist.");
                 }
             }
 
@@ -188,7 +188,7 @@ class ExtractPositiveNews
                 if ($newsStorageSystem != null) {
                     $userArguments["newsStorageSystemsToBeUsed"][] = $newsStorageSystem;
                 } else {
-                    die("The news storage system number " . $newsStorageSystemPos . " does not exist.");
+                    die("This news storage system does not exist.");
                 }
             }
 

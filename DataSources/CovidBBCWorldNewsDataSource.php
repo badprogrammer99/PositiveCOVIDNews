@@ -29,7 +29,8 @@ class CovidBBCWorldNewsDataSource extends PaginatedNewsDataSource
     /**
      * {@inheritDoc}
      */
-    public function retrievePaginatedNewsData(): array {
+    public function retrievePaginatedNewsData(): array
+    {
         $response = $this->getNewsDataSourceClient()->doRequest($this->getCurrentPage(), $this->getRequestOptions());
         return $this->getNewsParser()->parseNewsData($response);
     }

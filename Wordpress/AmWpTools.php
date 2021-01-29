@@ -129,14 +129,14 @@ class AmWpTools
 
         if ($success)
         {
-            $msg = '@wordpress_postToBlog : Posted OK!' . PHP_EOL;
+            $msg = "@wordpress_postToBlog : Posted news with title '$title'!" . PHP_EOL;
             AmWpUtils::simplerFeedback($msg);
         }
         else
         {
             $errorCode = $client->getErrorCode();
             $errorMessage = $client->getErrorMessage();
-            $msg = '@wordpress_postToBlog : Something went wrong - ' . $errorCode . ' : ' . $errorMessage . PHP_EOL;
+            $msg = "@wordpress_postToBlog : Something went wrong - " . $errorCode . ' : ' . $errorMessage . PHP_EOL;
             AmWpUtils::simplerFeedback($msg);
             return false;
         }

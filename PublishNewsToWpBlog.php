@@ -54,7 +54,7 @@ class PublishNewsToWpBlog
 
     /**
      * PublishNewsToWpBlog constructor.
-     * @param $arguments array The command-line arguments.
+     * @param array $arguments The command-line arguments.
      */
     public function __construct($arguments)
     {
@@ -119,7 +119,11 @@ class PublishNewsToWpBlog
                     if ($newsStorageSystem != null) {
                         $newsStorageSystemName = $newsStorageSystem->getUserFriendlyNewsStorageName();
                         $newsArticlesToUse[$newsStorageSystemName] = $newsStorageSystem->getAll();
+                        if (count($newsArticlesToUse[$newsStorageSystemName]) == 0)
+                            die("No news have been found in this news storage system.");
                         $newsStorageSystemsToUse[$newsStorageSystemName] = $newsStorageSystem;
+                    } else {
+                        die("This news storage system does not exist.");
                     }
                 }
 
@@ -128,10 +132,12 @@ class PublishNewsToWpBlog
                 $xmlRpcEndpoint = Utils::parseArgument($this->arguments["xmlRpcEndpoint"])[0];
 
                 $amWpTools = new AmWpTools($user, $pass, $xmlRpcEndpoint);
+                $wasAnyNewsArticleActive = false;
 
                 foreach ($newsArticlesToUse as $newsStorageSystemName => $newsArticles) {
                     foreach ($newsArticles as $newsArticle) {
                         if (!$newsArticle->isActive()) {
+                            $wasAnyNewsArticleActive = true;
                             $wasNewsPostedToBlog = $amWpTools->postToBlog(
                                 $newsArticle->getTitle(),
                                 $body = $newsArticle->getContent(),
@@ -148,7 +154,9 @@ class PublishNewsToWpBlog
                     }
                 }
 
-
+                if (!$wasAnyNewsArticleActive) {
+                    die("No news article was inactive (ready to be published to a blog).");
+                }
             } else {
                 die("Please provide the WordPress user and login, along with a XML RPC endpoint to post the news to");
             }
@@ -157,30 +165,30 @@ class PublishNewsToWpBlog
 
     /**
      * Check if a command line argument is present.
-     * @param $arg mixed The command line argument.
+     * @param string $arg The command line argument.
      * @return bool true if the argument is present, false if otherwise.
      */
-    private function checkIfCmdLineArgIsPresent($arg): bool
+    private function checkIfCmdLineArgIsPresent(string $arg): bool
     {
         return array_key_exists($arg, $this->arguments);
     }
 
     /**
      * Check if a command line argument has a value other than false.
-     * @param $arg mixed The command line argument.
+     * @param string $arg The command line argument.
      * @return bool true if the argument has a value other than false, false if otherwise.
      */
-    private function checkIfCmdLineArgHasValue($arg): bool
+    private function checkIfCmdLineArgHasValue(string $arg): bool
     {
         return $this->checkIfCmdLineArgIsPresent($arg) && $this->arguments[$arg] !== false;
     }
 
     /**
      * Gets an available news storage system by position.
-     * @param $newsStorageSystemPos
+     * @param int $newsStorageSystemPos
      * @return NewsStorageSystem|null A NewsStorageSystem object if anything was found, or null if otherwise
      */
-    private function getAvailableNewsStorageSystemByPos($newsStorageSystemPos): ?NewsStorageSystem
+    private function getAvailableNewsStorageSystemByPos(int $newsStorageSystemPos): ?NewsStorageSystem
     {
         if (!isset($this->availableNewsStorageSystems[$newsStorageSystemPos])) return null;
         return $this->availableNewsStorageSystems[$newsStorageSystemPos];

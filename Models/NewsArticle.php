@@ -233,15 +233,15 @@ class NewsArticle implements JsonSerializable
 
     /**
      * Tests if a news article is equal to another. Given the volatility of the news articles, we will compare their URL's
-     * considering they're the most non volatile attribute in news articles.
+     * and their titles considering they're the most non volatile attributes in news articles.
      * @param NewsArticle $other
      * @return bool If this news article is equals to the news article passed in the parameter.
      */
     public function equals(NewsArticle $other)
     {
         if ($this->getId() != null && $other->getId() != null)
-            return $this->getId() == $other->getId() && $this->url == $other->url;
-        return $this->url == $other->url;
+            return $this->getId() == $other->getId() && ($this->url == $other->url || $this->title == $other->title);
+        return $this->url == $other->url || $this->title == $other->title;
     }
 
     /**

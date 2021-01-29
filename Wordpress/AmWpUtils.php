@@ -12,46 +12,6 @@ use Exception;
 class AmWpUtils
 {
     /**
-     * Checks if a certain character is valid.
-     * @param mixed $c The character to be checked.
-     * @return bool Whether the passed character is valid or not.
-     * @author Artur Marques
-     */
-    public static function isValidChar($c): bool
-    {
-        $digit=($c>="0" && $c<="9");
-        $small=($c>="a" && $c<="z");
-        $capital=($c>="A" && $c<="Z");
-        $space=$c===" ";
-        $underscore=$c==="_";
-        $dot=$c===".";
-        $parentheses=$c==="("||$c===")"||$c==="["||$c==="]";
-        $hyfen=$c==="-";
-        return $digit || $small || $capital || $space || $underscore || $dot || $parentheses || $hyfen;
-    }//isValidChar
-
-    /**
-     * Sanitizes the filename.
-     * @param mixed $fileName The filename to be sanitized.
-     * @return bool|string false if the filename wasn't successfully sanitized, or the sanitized string itself.
-     * @author Artur Marques
-     */
-    public static function sanitizeFileName($fileName)
-    {
-        //$fileName=mb_convert_encoding($fileName, "utf-8", "iso-8859-1");
-        $ret="";
-        $size=strlen($fileName);
-        for ($pos=0; $pos<$size; $pos++){
-            $c=$fileName[$pos];
-            if (!self::isValidChar($c))
-                $ret.="_";
-            else
-                $ret.=$c;
-        }//for
-        return $ret===""?false:$ret;
-    }//sanitizeFileName
-
-    /**
      * Provides a simpler feedback message.
      * @param mixed $m A message
      * @return string|string[]
